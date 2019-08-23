@@ -1,0 +1,42 @@
+ # Uncomment the next line to define a global platform for your project
+ platform :ios, '10.0'
+
+target 'Activity0822' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Activity0822
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher', '4.10.1'
+  pod 'SVProgressHUD'
+  pod 'SwiftyBeaver'
+  pod 'SwifterSwift'
+  pod 'MarqueeLabel'
+  
+  pod 'RealmSwift'
+
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  # add pods for any other desired Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  
+  pod 'SwiftLint'
+
+  target 'Activity0822Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Activity0822UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
