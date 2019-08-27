@@ -1,0 +1,540 @@
+{
+    "0": {
+        "score": 1,
+        "id": 2013921,
+        "name": "Taiwan Travelling & Language Exchange",
+        "status": "active",
+        "link": "https://www.meetup.com/languageexchange/",
+        "urlname": "languageexchange",
+        "description": "<p>According to Meetup.com, we are 'One of the most active Meetup groups in the world'</p>
+    <p>Taiwan Travel &amp; Language Exchange is evolving into an umbrella structure for people all over Taiwan to coordinate joint activities with and for people who want to practice or learn English, get together to socialize, go hiking with experienced volunteer leaders, or join occasional one-time activities.<br></p>
+    <p>While Taiwan is often described as 'a small island,' it's large enough that it is both complex and expensive for anyone to attend events everywhere. As a result, most of the Social Networking activities tend to be centered in Taipei and everyone else has been ignored.</p>
+    <p>So, no matter where in Taiwan you are located, we invite you to join this group. Existing members in your area will do their best to get you involved in local events and the group itself will give you a view of things all over Taiwan. If you should find yourself traveling or moving to another area, you will already have contacts you can connect with.</p>
+    <p>While English is the most common language among us, Mandarin Chinese is equally important and welcome.</p>
+    <p>Who should join us?</p>
+    <p>Anyone who can manage enough English or Mandarin to communicate in this setting is welcome.</p>
+    <p>Anyone who seeks opportunities to socialize with speakers of one or both of these languages will find them here.</p>
+    <p>Anyone living in Taiwan or planing to come here is also welcome.</p>
+    <p>Anyone not living or traveling to Taiwan but interested in what people are doing here is welcome but you are less likely to find much benefit.</p>
+    <p>If you use this Meetup group to distribute commercial advertising, you will be warned and may be banned without further warning!</p>",
+    "created": 1307979463000,
+        "city": "Taipei",
+        "untranslated_city": "Taipei",
+        "country": "TW",
+        "localized_country_name": "Taiwan",
+        "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 14187,
+        "organizer": {
+            "id": 214950992,
+            "name": "Philip",
+            "bio": "",
+            "photo": {
+                "id": 265803292,
+                "highres_link": "https://secure.meetupstatic.com/photos/member/c/d/c/highres_265803292.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/member/c/d/c/member_265803292.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/member/c/d/c/thumb_265803292.jpeg",
+                "type": "member",
+                "base_url": "https://secure.meetupstatic.com"
+            }
+        },
+        "who": "Members",
+        "group_photo": {
+            "id": 441531592,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/c/9/8/8/highres_441531592.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/c/9/8/8/600_441531592.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/c/9/8/8/thumb_441531592.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "key_photo": {
+            "id": 475450181,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/2/7/c/5/highres_475450181.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/2/7/c/5/600_475450181.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/2/7/c/5/thumb_475450181.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "timezone": "Asia/Taipei",
+        "next_event": {
+            "id": "gxvldryzlblc",
+            "name": "Let's meet up and exchange some languages!",
+            "yes_rsvp_count": 5,
+            "time": 1566988200000,
+            "utc_offset": 28800000
+        },
+        "category": {
+            "id": 31,
+            "name": "Socializing",
+            "shortname": "socializing",
+            "sort_name": "Socializing"
+        },
+        "meta_category": {
+            "id": 272,
+            "shortname": "social",
+            "name": "Social",
+            "sort_name": "Social",
+            "photo": {
+                "id": 450131947,
+                "highres_link": "https://secure.meetupstatic.com/photos/event/2/e/a/b/highres_450131947.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/event/2/e/a/b/600_450131947.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/event/2/e/a/b/thumb_450131947.jpeg",
+                "type": "event",
+                "base_url": "https://secure.meetupstatic.com"
+            },
+            "category_ids": [
+                31
+            ]
+        }
+    },
+    "1": {
+        "score": 1,
+        "id": 18312216,
+        "name": "Lonely Island  (LEIT)",
+        "status": "active",
+        "link": "https://www.meetup.com/lonely-Island/",
+        "urlname": "lonely-Island",
+        "description": "<p>Feel alone, know nobody and don't know how to meet real Taiwanese friends?</p> 
+    <p>Lonely Island is a group for meet new friends from all over the world at Taipei.</p> 
+    <p>wish everyone can join our activities.</p> 
+    <p>we will have regular events:</p> 
+    <p>Check our fb : LEIT <br>Instagram : paulleit</p>",
+    "created": 1420694450000,
+        "city": "Taipei",
+        "untranslated_city": "Taipei",
+        "country": "TW",
+        "localized_country_name": "Taiwan",
+        "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 6402,
+        "organizer": {
+            "id": 183412659,
+            "name": "Paul Leit",
+            "bio": "",
+            "photo": {
+                "id": 242734650,
+                "highres_link": "https://secure.meetupstatic.com/photos/member/8/7/5/a/highres_242734650.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/member/8/7/5/a/member_242734650.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/member/8/7/5/a/thumb_242734650.jpeg",
+                "type": "member",
+                "base_url": "https://secure.meetupstatic.com"
+            }
+        },
+        "who": "Day dreamers",
+        "group_photo": {
+            "id": 466529851,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/7/4/9/b/highres_466529851.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/7/4/9/b/600_466529851.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/7/4/9/b/thumb_466529851.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "key_photo": {
+            "id": 454675393,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/d/8/6/1/highres_454675393.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/d/8/6/1/600_454675393.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/d/8/6/1/thumb_454675393.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "timezone": "Asia/Taipei",
+        "next_event": {
+            "id": "vrswdryzlblc",
+            "name": "Korean Chinese Language Exchange  대만-한국 친구들모임中韓語言交換(每次約40人)",
+            "yes_rsvp_count": 1,
+            "time": 1566990000000,
+            "utc_offset": 28800000
+        },
+        "category": {
+            "id": 16,
+            "name": "Language & Ethnic Identity",
+            "shortname": "language",
+            "sort_name": "Language & Ethnic Identity"
+        },
+        "meta_category": {
+            "id": 212,
+            "shortname": "language",
+            "name": "Language & Culture",
+            "sort_name": "Language & Culture",
+            "photo": {
+                "id": 450131939,
+                "highres_link": "https://secure.meetupstatic.com/photos/event/2/e/a/3/highres_450131939.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/event/2/e/a/3/600_450131939.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/event/2/e/a/3/thumb_450131939.jpeg",
+                "type": "event",
+                "base_url": "https://secure.meetupstatic.com"
+            },
+            "category_ids": [
+                16
+            ]
+        }
+    },
+    "2": {
+        "score": 1,
+        "id": 14951982,
+        "name": "Taiwan Java User Group",
+        "status": "active",
+        "link": "https://www.meetup.com/taiwanjug/",
+        "urlname": "taiwanjug",
+        "description": "<p>TWJUG 於2006年7月開始舉辦活動，讓使用 Java 的開發者能有地方討論和推廣 Java 和相關技術。不論是各種 JVM 上的程式語言，JVM 相關，Mobile 和 Web 應用程式開發，軟體開發方式...等等，都歡迎大家參與分享。我們每隔一到二個月會在台北舉辦TWJUG聚會，歡迎參加。</p>
+    <br>
+    
+    <p>Hi, TWJUG is a group of Java Enthusiasts! Come join us to meet other people interested in Java.</p>",
+    "created": 1402235361000,
+        "city": "Taipei",
+        "untranslated_city": "Taipei",
+        "country": "TW",
+        "localized_country_name": "Taiwan",
+        "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 1572,
+        "organizer": {
+            "id": 75153822,
+            "name": "KOJI LIN",
+            "bio": "",
+            "photo": {
+                "id": 273145394,
+                "highres_link": "https://secure.meetupstatic.com/photos/member/6/3/3/2/highres_273145394.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/member/6/3/3/2/member_273145394.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/member/6/3/3/2/thumb_273145394.jpeg",
+                "type": "member",
+                "base_url": "https://secure.meetupstatic.com"
+            }
+        },
+        "who": "Java Enthusiasts",
+        "group_photo": {
+            "id": 372852122,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/2/f/5/a/highres_372852122.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/2/f/5/a/600_372852122.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/2/f/5/a/thumb_372852122.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "key_photo": {
+            "id": 436911138,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/c/7/c/2/highres_436911138.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/c/7/c/2/600_436911138.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/c/7/c/2/thumb_436911138.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "timezone": "Asia/Taipei",
+        "next_event": {
+            "id": "264123847",
+            "name": "TWJUG 201909 聚會",
+            "yes_rsvp_count": 40,
+            "time": 1567681200000,
+            "utc_offset": 28800000
+        },
+        "category": {
+            "id": 34,
+            "name": "Tech",
+            "shortname": "tech",
+            "sort_name": "Tech"
+        },
+        "meta_category": {
+            "id": 292,
+            "shortname": "tech",
+            "name": "Tech",
+            "sort_name": "Tech",
+            "photo": {
+                "id": 450131949,
+                "highres_link": "https://secure.meetupstatic.com/photos/event/2/e/a/d/highres_450131949.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/event/2/e/a/d/600_450131949.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/event/2/e/a/d/thumb_450131949.jpeg",
+                "type": "event",
+                "base_url": "https://secure.meetupstatic.com"
+            },
+            "category_ids": [
+                34
+            ]
+        }
+    },
+    "3": {
+        "score": 1,
+        "id": 26355679,
+        "name": "FitFam Taipei - HIIT, Outdoor, Climbing, OCR Training",
+        "status": "active",
+        "link": "https://www.meetup.com/Fitfam-Taipei/",
+        "urlname": "Fitfam-Taipei",
+        "description": "<p>We build meaningful communities with free fitness;&nbsp;<span>We sweat and connect; It doesn’t matter who you are.&nbsp;&nbsp;</span><span>We’re your motivation boost to build a healthy lifestyle, No equipment or previous experience is required to attend a session;&nbsp;</span><span>All you have to do is Show up.&nbsp; All workouts are designed to be accessible and adaptable to everyone.</span></p>
+    <p><span><span>We have 4 types of MeetUps:</span> <br><span>&nbsp; &nbsp;1 - Outdoor HIIT (9: 30am Da-An Park)</span> <br><span>&nbsp; &nbsp;2 - Hiking &amp; Climbing (Sundays)</span> <br><span>&nbsp; &nbsp;3 - Specialized OCR (</span>Obstacle<span>&nbsp;training) <br>&nbsp; &nbsp;4 - Personal Training</span></span></p>
+    <p><span><span>FitFam is a non-profit, volunteer-led fitness community that provides free and consistent access to quality fitness, wellness, and an overall active lifestyle year round. Our journey started with only six friends who were looking to stay active during the long and cold winter in Shanghai in 2015. We have since then grown to a community of more than 5,
+        000 members that is built on trust, accountability, and inclusivity.&nbsp; FitFam Taipei branch started in 2018 as an independent group and has since been incorporated into the Fitfam family.&nbsp; Fitfam Taipei offers traditional HIIT training as well as variety of outdoor and indoor activities <br></span></span></p>
+    <p><a href='http: //WeFitFam.com' class='linkified'>http: //WeFitFam.com</a></p>", "created": 1508738362000, "city": "Taipei", "untranslated_city": "Taipei", "country": "TW", "localized_country_name": "Taiwan", "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 1570,
+        "organizer": {
+            "id": 204630087,
+            "name": "Christoph Lex",
+            "bio": "I'm a German PT based in Taipei. I'm passionate about trail-running, OCR, Calisthenics and a strong proponent of a low-carb, high fat lifestyle. I love to go hiking on weekends and explore all the beautiful mountains Taiwan has to offer.",
+            "photo": {
+                "id": 282426375,
+                "highres_link": "https://secure.meetupstatic.com/photos/member/1/8/e/7/highres_282426375.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/member/1/8/e/7/member_282426375.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/member/1/8/e/7/thumb_282426375.jpeg",
+                "type": "member",
+                "base_url": "https://secure.meetupstatic.com"
+            }
+        },
+        "who": "Fitfam Taipei",
+        "group_photo": {
+            "id": 479490470,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/7/7/0/6/highres_479490470.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/7/7/0/6/600_479490470.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/7/7/0/6/thumb_479490470.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "key_photo": {
+            "id": 479490433,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/7/6/e/1/highres_479490433.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/7/6/e/1/600_479490433.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/7/6/e/1/thumb_479490433.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "timezone": "Asia/Taipei",
+        "next_event": {
+            "id": "brgmfryzlblc",
+            "name": "Great Stairs Challenge - Chiang Kai Shek Memorial Hall",
+            "yes_rsvp_count": 3,
+            "time": 1566991800000,
+            "utc_offset": 28800000
+        },
+        "category": {
+            "id": 9,
+            "name": "Fitness",
+            "shortname": "fitness",
+            "sort_name": "Fitness"
+        },
+        "meta_category": {
+            "id": 282,
+            "shortname": "sports-fitness",
+            "name": "Sports & Fitness",
+            "sort_name": "Sports & Fitness",
+            "photo": {
+                "id": 450131948,
+                "highres_link": "https://secure.meetupstatic.com/photos/event/2/e/a/c/highres_450131948.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/event/2/e/a/c/600_450131948.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/event/2/e/a/c/thumb_450131948.jpeg",
+                "type": "event",
+                "base_url": "https://secure.meetupstatic.com"
+            },
+            "category_ids": [
+                9,
+                32
+            ]
+        }
+    },
+    "4": {
+        "score": 1,
+        "id": 24880048,
+        "name": "Sketch & Design - Taipei",
+        "status": "active",
+        "link": "https://www.meetup.com/Sketch-Taipei-Meetup/",
+        "urlname": "Sketch-Taipei-Meetup",
+        "description": "<p>This is a group for those Sketch lovers, UX designers/UI designers/Product designer/Product managers. We would love see all Sketch users and potential users to join us with their experiences and tips to share in the group. We are meant to spread the joy and fun to all Sketch users in Taipei area.</p>",
+        "created": 1499468965000,
+        "city": "Taipei",
+        "untranslated_city": "Taipei",
+        "country": "TW",
+        "localized_country_name": "Taiwan",
+        "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 1369,
+        "organizer": {
+            "id": 200642677,
+            "name": "Jeremy Chu",
+            "bio": "",
+            "photo": {
+                "id": 254327274,
+                "highres_link": "https://secure.meetupstatic.com/photos/member/b/8/a/a/highres_254327274.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/member/b/8/a/a/member_254327274.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/member/b/8/a/a/thumb_254327274.jpeg",
+                "type": "member",
+                "base_url": "https://secure.meetupstatic.com"
+            }
+        },
+        "who": "Members",
+        "key_photo": {
+            "id": 483964375,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/1/1/1/7/highres_483964375.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/1/1/1/7/600_483964375.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/1/1/1/7/thumb_483964375.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "timezone": "Asia/Taipei",
+        "next_event": {
+            "id": "263861397",
+            "name": "Sketch Meetup #7 UIUX求職健檢",
+            "yes_rsvp_count": 41,
+            "time": 1567231200000,
+            "utc_offset": 28800000
+        },
+        "category": {
+            "id": 6,
+            "name": "Education & Learning",
+            "shortname": "education-learning",
+            "sort_name": "Education & Learning"
+        },
+        "meta_category": {
+            "id": 562,
+            "shortname": "education",
+            "name": "Learning",
+            "sort_name": "Learning",
+            "photo": {
+                "id": 450131931,
+                "highres_link": "https://secure.meetupstatic.com/photos/event/2/e/9/b/highres_450131931.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/event/2/e/9/b/600_450131931.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/event/2/e/9/b/thumb_450131931.jpeg",
+                "type": "event",
+                "base_url": "https://secure.meetupstatic.com"
+            },
+            "category_ids": [
+                6
+            ]
+        }
+    },
+    "5": {
+        "score": 1,
+        "id": 22101430,
+        "name": "Taipei Free Walking Tour",
+        "status": "active",
+        "link": "https://www.meetup.com/Taipei-Free-Walking-Tour/",
+        "urlname": "Taipei-Free-Walking-Tour",
+        "description": "<p>Wanna know more about Taipei? All the history and legends, the local customs and modern activities, the fun facts about this amazing city - you can learn all these in a single walk!</p>
+    <p>Explore Taipei with Like It Formosa's award-winning walking tours led by young, professional, and local tour guides! If you are fresh here, we have three Taipei Free Walking Tours to give you an overview of the city. <br></p>
+    <p>• <b>FREE</b> <br></p>
+    <p>Without the barriers brought along with a fixed price tag, our tour welcomes backpackers with all sorts of budgets. We do our best to maintain the quality of our tour, and let the guests decide how much the tour is worth.</p>
+    <p>• <b>WALKING</b> <br></p>
+    <p>With each step, you get to breath in the city unhurriedly and really appreciate the surroundings.</p>
+    <p>• <b>TOUR</b> <br></p>
+    <p>The best way to know a city is to follow those who live and love the city.</p>
+    <p><span>Visit </span><a href='http: //www.likeitformosa.com/tour'>www.likeitformosa.com/tour</a><span> and choose your own way to explore more about Taipei!</span></p>", "created": 1485467578000, "city": "Taipei",
+        "untranslated_city": "Taipei",
+        "country": "TW",
+        "localized_country_name": "Taiwan",
+        "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 5074,
+        "organizer": {
+            "id": 220775185,
+            "name": "Like It Formosa",
+            "bio": "",
+            "photo": {
+                "id": 263716919,
+                "highres_link": "https://secure.meetupstatic.com/photos/member/4/2/1/7/highres_263716919.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/member/4/2/1/7/member_263716919.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/member/4/2/1/7/thumb_263716919.jpeg",
+                "type": "member",
+                "base_url": "https://secure.meetupstatic.com"
+            }
+        },
+        "who": "Members",
+        "group_photo": {
+            "id": 480922709,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/5/8/b/5/highres_480922709.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/5/8/b/5/600_480922709.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/5/8/b/5/thumb_480922709.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "key_photo": {
+            "id": 480922744,
+            "highres_link": "https://secure.meetupstatic.com/photos/event/5/8/d/8/highres_480922744.jpeg",
+            "photo_link": "https://secure.meetupstatic.com/photos/event/5/8/d/8/600_480922744.jpeg",
+            "thumb_link": "https://secure.meetupstatic.com/photos/event/5/8/d/8/thumb_480922744.jpeg",
+            "type": "event",
+            "base_url": "https://secure.meetupstatic.com"
+        },
+        "timezone": "Asia/Taipei",
+        "next_event": {
+            "id": "cmcsqpyzlbkc",
+            "name": "Taipei Free Walking Tour / Golden Age",
+            "yes_rsvp_count": 1,
+            "time": 1566889200000,
+            "utc_offset": 28800000
+        },
+        "category": {
+            "id": 16,
+            "name": "Language & Ethnic Identity",
+            "shortname": "language",
+            "sort_name": "Language & Ethnic Identity"
+        },
+        "meta_category": {
+            "id": 212,
+            "shortname": "language",
+            "name": "Language & Culture",
+            "sort_name": "Language & Culture",
+            "photo": {
+                "id": 450131939,
+                "highres_link": "https://secure.meetupstatic.com/photos/event/2/e/a/3/highres_450131939.jpeg",
+                "photo_link": "https://secure.meetupstatic.com/photos/event/2/e/a/3/600_450131939.jpeg",
+                "thumb_link": "https://secure.meetupstatic.com/photos/event/2/e/a/3/thumb_450131939.jpeg",
+                "type": "event",
+                "base_url": "https://secure.meetupstatic.com"
+            },
+            "category_ids": [
+                16
+            ]
+        }
+    },
+    "6": {
+        "score": 1,
+        "id": 32296721,
+        "name": "FOOD CHINESE SURVIVAL IN TAIWAN",
+        "status": "active",
+        "link": "https://www.meetup.com/FOOD-CHINESE-SURVIVAL-IN-TAIWAN/",
+        "urlname": "FOOD-CHINESE-SURVIVAL-IN-TAIWAN",
+        "description": "<p>People that want to experience local and traditional Taiwanese food in Taiwan. We take you to the most famous and delicious restaurants, night markets and food stalls in Taiwan to try their food without worrying how to order because of the language barrier. <br>You will learn the history behind the dish and drinks you'll eat and also experience how locals like their food. </p> 
+    <p>This is an unique experience since you will eat and drink like a local.</p>",
+    "created": 1561981881000,
+        "city": "Taipei",
+        "untranslated_city": "Taipei",
+        "country": "TW",
+        "localized_country_name": "Taiwan",
+        "localized_location": "Taipei, Taiwan",
+        "state": "",
+        "join_mode": "open",
+        "visibility": "public",
+        "lat": 25.02,
+        "lon": 121.45,
+        "members": 226,
+        "organizer": {
+            "id": 278164022,
+            "name": "Peter Wu",
+            "bio": "太極拳是武術，也是健身術、養生術，防身術。尤其在醫療手段很起作用，有治病延壽功能。我們喜歡以「武當張三豐」為祖師爺，太極拳為武當派鎮派之寶，講究太極圓轉，永無止境。
+    
+    太極拳講究鬆沉圓活，用於實戰時，主要後發制人，注重觀察瞭解對手，通過引導而不是抵抗對手的發力，和改變佔位來使對手的進攻落空，同時讓對手暴露弱點，然後自身蓄力和發力進行反擊。
+    please click the link below
+    https: //www.facebook.com/groups/684686718639283/", "photo": { "id": 291044837, "highres_link": "https://secure.meetupstatic.com/photos/member/a/f/2/5/highres_291044837.jpeg", "photo_link": "https://secure.meetupstatic.com/photos/member/a/f/2/5/member_291044837.jpeg", "thumb_link": "https://secure.meetupstatic.com/photos/member/a/f/2/5/thumb_291044837.jpeg", "type": "member",
+            "base_url": "https://secure.meetupstatic.com"
+        }
+    }
+}
