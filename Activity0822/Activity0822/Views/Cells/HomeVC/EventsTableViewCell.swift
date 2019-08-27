@@ -1,18 +1,16 @@
 //
-//  TypeFourTableViewCell.swift
-//  0610
+//  EventsTableViewCell.swift
+//  Activity0822
 //
-//  Created by Chris on 2019/6/18.
-//  Copyright © 2019 user. All rights reserved.
+//  Created by Christmas Kay on 2019/8/26.
+//  Copyright © 2019 Christmas Kay. All rights reserved.
 //
 
 import UIKit
 
-class TypeFourTableViewCell: UITableViewCell {
-//
-//    var cellBackgroundColor: UIColor?
+class EventsTableViewCell: UITableViewCell {
 
-    var cellModels: [Content]? {
+    var cellModels: [Event]? {
         didSet {
             collectionView.reloadData()
         }
@@ -36,16 +34,17 @@ class TypeFourTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        collectionView.isScrollEnabled = false
+        collectionView.isScrollEnabled = true
+//        collectionView.isPagingEnabled = true
 
-        collectionView.register(nibWithCellClass: FunctionCollectionViewCell.self)
+        collectionView.register(nibWithCellClass: EventCollectionViewCell.self)
     }
     
 }
 
 // MARK: - UICollectionView DataSource
 
-extension TypeFourTableViewCell: UICollectionViewDataSource {
+extension EventsTableViewCell: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -59,12 +58,8 @@ extension TypeFourTableViewCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: FunctionCollectionViewCell = collectionView.dequeueReusableCell(withClass: FunctionCollectionViewCell.self, for: indexPath)
-        cell.imageStr = cellModels![indexPath.item].textImage
-        cell.titleStr = cellModels![indexPath.item].text
-//        cell.contentView.backgroundColor = UIColor(hexString: cellModels![indexPath.item].textBackgroundColor!)
-        cell.contentBackgoundView.backgroundColor = UIColor(hexString: cellModels![indexPath.item].textBackgroundColor!)
-        cell.titleLabel.textColor = UIColor(hexString: cellModels![indexPath.item].textColor!)
+        let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(withClass: EventCollectionViewCell.self, for: indexPath)
+        cell.event = cellModels![indexPath.item]
         return cell
     }
 
@@ -72,41 +67,33 @@ extension TypeFourTableViewCell: UICollectionViewDataSource {
 
 // MARK: - UICollectionView Delegate
 
-extension TypeFourTableViewCell: UICollectionViewDelegate {
+extension EventsTableViewCell: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let urlStr = cellModels![indexPath.item].textWeb!
-        if let url = URL(string: urlStr) {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                // Fallback on earlier versions
-                UIApplication.shared.openURL(url)
-            }
-        }
     }
 
 }
 
 // MARK: - UICollectionView FlowLayout
 
-extension TypeFourTableViewCell: UICollectionViewDelegateFlowLayout {
+extension EventsTableViewCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width - 6) / 3
-        return CGSize(width: width, height: 65)
+//        let width = collectionView.frame.size.width - 20
+//        return CGSize(width: width, height: 215)
+        return CGSize(width: 300, height: 215)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0
     }
 
 }

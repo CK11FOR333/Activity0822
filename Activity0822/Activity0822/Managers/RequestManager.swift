@@ -29,7 +29,7 @@ enum ServerEnvironment {
                 keys = NSDictionary(contentsOfFile: path)
             }
 
-            let testApiKeyDomain = keys?["ApiKeyDomainTest"] as? String ?? "https://raw.githubusercontent.com/KayHsiao/TestActivity"
+            let testApiKeyDomain = keys?["ApiKeyDomainTest"] as? String ?? "https://raw.githubusercontent.com/KayHsiao/Activity0822"
             log.debug("testApiKeyDomain: \(testApiKeyDomain)")
 
             return testApiKeyDomain
@@ -59,16 +59,19 @@ struct AppAPI {
     static let decentralization = stripURL("/master/Decentralization.json")
     static let eshopping = stripURL("/master/Eshopping.json")
     static let fairness = stripURL("/master/Fairness.json")
+
+    static let events = stripURL("/master/Events.json")
+    static let groups = stripURL("/master/Groups.json")
 }
 
 class RequestManager {
-    
-    static let sharedInstance = RequestManager(.production)
-    
+
+    static let sharedInstance = RequestManager(.test)
+
     // MARK: Request Configuraion
-    
+
     var serverEnviroment: ServerEnvironment
-    
+
     private init(_ environment: ServerEnvironment) {
         self.serverEnviroment = environment
     }
@@ -166,37 +169,51 @@ extension RequestManager {
         baseRequest(.get, url: AppAPI.fairness, parameters: nil, needToken: false, callback: success)
     }
 
-    /// 全台咖啡廳
-//    func getCafe(with name: String, success: @escaping (_ cafes: [Cafe]) -> Void) {
-//        baseRequest(.get, url: "https://cafenomad.tw/api/v1.2/cafes/\(name)") { (json) in
-//            let cafeArray = json.arrayValue
-//            log.info("cafeArray count is \(cafeArray.count)")
-//
-//            var cafes: [Cafe] = []
-//
-//            for key in cafeArray {
-//                let cafe = Cafe(id: key["id"].stringValue,
-//                                mrt: key["mrt"].stringValue,
-//                                url: key["url"].stringValue,
-//                                city: key["city"].stringValue,
-//                                name: key["name"].stringValue,
-//                                socket: key["socket"].stringValue,
-//                                address: key["address"].stringValue,
-//                                longitude: key["longitude"].stringValue,
-//                                latitude: key["latitude"].stringValue,
-//                                limited_time: key["limited_time"].stringValue,
-//                                standing_desk: key["standing_desk"].stringValue,
-//                                wifi: key["wifi"].intValue,
-//                                seat: key["seat"].intValue,
-//                                quiet: key["quiet"].intValue,
-//                                tasty: key["tasty"].intValue,
-//                                cheap: key["cheap"].intValue,
-//                                music: key["music"].intValue)
-//                cafes.append(cafe)
-//            }
-//
-//            success(cafes)
-//        }
-//    }
+    func getEvents(success: @escaping (_ events: [Event]) -> Void) {
+        baseRequest(.get, url: AppAPI.events, parameters: nil, needToken: false) { (json) in
+            let eventArray = json["events"].arrayValue
+            log.info("eventArray count is \(eventArray.count)")
+
+            var events: [Event] = []
+
+            for key in eventArray {
+                let event = Event(id: key["id"].stringValue,
+                                  name: key["name"].stringValue,
+                                  localDate: key["local_date"].stringValue,
+                                  localTime: key["local_time"].stringValue,
+                                  waitlistCount: key["waitlist_count"].intValue,
+                                  yesRsvpCount: key["yes_rsvp_count"].intValue,
+                                  venueName: key["venue"]["name"].stringValue,
+                                  groupName: key["group"]["name"].stringValue,
+                                  link: key["link"].stringValue,
+                                  description: key["description"].stringValue,
+                                  visibility: key["visibility"].stringValue,
+                                  memberPayFee: key["member_pay_fee"].boolValue)
+                events.append(event)
+            }
+
+            success(events)
+        }
+    }
+
+    func getGroups(success: @escaping (_ groups: [Group]) -> Void) {
+        baseRequest(.get, url: AppAPI.groups, parameters: nil, needToken: false) { (json) in
+            let groupsArray = json["groups"].arrayValue
+            log.info("groupsArray count is \(groupsArray.count)")
+
+            var groups: [Group] = []
+
+            for key in groupsArray {
+                let group = Group(id: key["id"].intValue,
+                                  name: key["name"].stringValue,
+                                  categoryName: key["categoryName"].stringValue,
+                                  attendeesCount: key["attendeesCount"].intValue,
+                                  keyPhoto: key["keyPhoto"].stringValue)
+                groups.append(group)
+            }
+
+            success(groups)
+        }
+    }
 
 }
