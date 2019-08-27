@@ -504,37 +504,5 @@
                 16
             ]
         }
-    },
-    "6": {
-        "score": 1,
-        "id": 32296721,
-        "name": "FOOD CHINESE SURVIVAL IN TAIWAN",
-        "status": "active",
-        "link": "https://www.meetup.com/FOOD-CHINESE-SURVIVAL-IN-TAIWAN/",
-        "urlname": "FOOD-CHINESE-SURVIVAL-IN-TAIWAN",
-        "description": "<p>People that want to experience local and traditional Taiwanese food in Taiwan. We take you to the most famous and delicious restaurants, night markets and food stalls in Taiwan to try their food without worrying how to order because of the language barrier. <br>You will learn the history behind the dish and drinks you'll eat and also experience how locals like their food. </p> 
-    <p>This is an unique experience since you will eat and drink like a local.</p>",
-    "created": 1561981881000,
-        "city": "Taipei",
-        "untranslated_city": "Taipei",
-        "country": "TW",
-        "localized_country_name": "Taiwan",
-        "localized_location": "Taipei, Taiwan",
-        "state": "",
-        "join_mode": "open",
-        "visibility": "public",
-        "lat": 25.02,
-        "lon": 121.45,
-        "members": 226,
-        "organizer": {
-            "id": 278164022,
-            "name": "Peter Wu",
-            "bio": "太極拳是武術，也是健身術、養生術，防身術。尤其在醫療手段很起作用，有治病延壽功能。我們喜歡以「武當張三豐」為祖師爺，太極拳為武當派鎮派之寶，講究太極圓轉，永無止境。
-    
-    太極拳講究鬆沉圓活，用於實戰時，主要後發制人，注重觀察瞭解對手，通過引導而不是抵抗對手的發力，和改變佔位來使對手的進攻落空，同時讓對手暴露弱點，然後自身蓄力和發力進行反擊。
-    please click the link below
-    https: //www.facebook.com/groups/684686718639283/", "photo": { "id": 291044837, "highres_link": "https://secure.meetupstatic.com/photos/member/a/f/2/5/highres_291044837.jpeg", "photo_link": "https://secure.meetupstatic.com/photos/member/a/f/2/5/member_291044837.jpeg", "thumb_link": "https://secure.meetupstatic.com/photos/member/a/f/2/5/thumb_291044837.jpeg", "type": "member",
-            "base_url": "https://secure.meetupstatic.com"
-        }
     }
 }
