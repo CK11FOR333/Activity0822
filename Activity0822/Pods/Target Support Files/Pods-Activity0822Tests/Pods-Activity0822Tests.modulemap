@@ -1,0 +1,6 @@
+framework module Pods_Activity0822Tests {
+  umbrella header "Pods-Activity0822Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
