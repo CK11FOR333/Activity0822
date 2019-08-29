@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol EventsTableViewCellDelegate: class {
+    func eventCellDidClick(at indexPath: IndexPath)
+}
+
 class EventsTableViewCell: UITableViewCell {
+
+    weak var delegate: EventsTableViewCellDelegate?
 
     var cellModels: [Event]? {
         didSet {
@@ -70,6 +76,7 @@ extension EventsTableViewCell: UICollectionViewDataSource {
 extension EventsTableViewCell: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.eventCellDidClick(at: indexPath)
     }
 
 }

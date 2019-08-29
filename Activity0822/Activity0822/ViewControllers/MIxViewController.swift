@@ -335,7 +335,7 @@ class MIxViewController: UIViewController {
                     let content = Content(text: nil, textColor: nil, textBackgroundColor: nil, textImage: oriCon["textImage"].stringValue, textWeb: oriCon["textWeb"].stringValue)
                     cons.append(content)
                 }
-                if cons.count > 0 {
+                if !cons.isEmpty {
                     let typeOne = TypeOne(type: type, contents: cons, title: dic["title"].stringValue, titleColor: dic["titleColor"].stringValue, msg: dic["msg"].stringValue, msgColor: dic["msgColor"].stringValue, backgroundColor: dic["backgroundColor"].stringValue)
                     (vc as! MIxViewController).cellModels.append(typeOne)
                 }
@@ -348,7 +348,7 @@ class MIxViewController: UIViewController {
                     let content = Content(text: oriCon["text"].stringValue, textColor: oriCon["textColor"].stringValue, textBackgroundColor: oriCon["textBackgroundColor"].stringValue, textImage: nil, textWeb: nil, info: oriCon["info"].stringValue, infoColor: oriCon["infoColor"].stringValue, infoBackgroundColor: oriCon["infoBackgroundColor"].stringValue, infoImage: nil, infoWeb: oriCon["infoWeb"].stringValue)
                     cons.append(content)
                 }
-                if cons.count > 0 {
+                if !cons.isEmpty {
                     let typeTwo = TypeTwo(type: type, contents: cons)
                     (vc as! MIxViewController).cellModels.append(typeTwo)
                 }
@@ -374,7 +374,7 @@ class MIxViewController: UIViewController {
                     let content = Content.init(text: oriCon["text"].stringValue, textColor: oriCon["textColor"].stringValue, textBackgroundColor: oriCon["textBackgroundColor"].stringValue, textImage: oriCon["textImage"].stringValue, textWeb: oriCon["textWeb"].stringValue)
                     cons.append(content)
                 }
-                if cons.count > 0 {
+                if !cons.isEmpty {
                     let typeFour = TypeFour(type: type, contents: cons, cellPaddingColor: cellPaddingColorHex)
                     (vc as! MIxViewController).cellModels.append(typeFour)
                 }
@@ -404,7 +404,7 @@ class MIxViewController: UIViewController {
                     let content = Content(text: oriCon["text"].stringValue, textColor: oriCon["textColor"].stringValue, textBackgroundColor: oriCon["textBackgroundColor"].stringValue, textImage: oriCon["textImage"].stringValue, textWeb: oriCon["textWeb"].stringValue, info: nil, infoColor: nil, infoBackgroundColor: nil, infoImage: nil, infoWeb: nil)
                     cons.append(content)
                 }
-                if cons.count > 0 {
+                if !cons.isEmpty {
                     let type7 = TypeSeven(type: type, contents: cons, cellPaddingColor: cellPaddingColorHex)
                     (vc as! MIxViewController).cellModels.append(type7)
                 }

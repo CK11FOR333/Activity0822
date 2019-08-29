@@ -73,7 +73,7 @@ class MainTabBarController: UITabBarController {
                     // Fallback on earlier versions
                 }
                 homeNav.tabBarItem.image = UIImage(named: "tabbar_icon_shop_default")
-                homeNav.tabBarItem.title = "咖啡廳"
+                homeNav.tabBarItem.title = "GroupUp"
 
                 vcs.append(homeNav)
 

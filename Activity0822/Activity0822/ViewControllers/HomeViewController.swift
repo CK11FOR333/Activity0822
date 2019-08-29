@@ -98,9 +98,9 @@ extension HomeViewController: UITableViewDataSource {
             let cell: EventsTableViewCell = tableView.dequeueReusableCell(withClass:  EventsTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.cellModels = self.events
+            cell.delegate = self
             return cell
-        }
-        else {
+        } else {
             let cell: GroupsTableViewCell = tableView.dequeueReusableCell(withClass: GroupsTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.cellModels = self.groups
@@ -123,5 +123,16 @@ extension HomeViewController: UITableViewDelegate {
 //            return 348
 //        }
 //    }
+
+}
+
+extension HomeViewController: EventsTableViewCellDelegate {
+
+    func eventCellDidClick(at indexPath: IndexPath) {
+        let eventVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
+        eventVC.event = self.events[indexPath.item]
+        let navC = UINavigationController(rootViewController: eventVC)
+        self.present(navC, animated: true, completion: nil)
+    }
 
 }
