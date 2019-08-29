@@ -131,8 +131,9 @@ extension HomeViewController: EventsTableViewCellDelegate {
     func eventCellDidClick(at indexPath: IndexPath) {
         let eventVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
         eventVC.event = self.events[indexPath.item]
-        let navC = UINavigationController(rootViewController: eventVC)
-        self.present(navC, animated: true, completion: nil)
+//        let navC = UINavigationController(rootViewController: eventVC)
+//        self.present(navC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(eventVC, animated: true)
     }
 
 }

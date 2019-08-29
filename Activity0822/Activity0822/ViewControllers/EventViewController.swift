@@ -46,7 +46,8 @@ extension EventViewController {
         updateUI()
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: nil)
-
+    }
+    
 }
 
 extension EventViewController {
