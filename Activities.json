@@ -1,18 +1,15 @@
 {
-    "tintColor": "FFFFFF",
-    "tabBarColor": "00B156",
-    "unSelectedTabBarColor": "BDBDBD",
     "list":
     [
-         {
+        {
             "vc": "ViewController0",
-            "img": "zhuce",
-            "name": "宜蘭工作咖啡廳"
+            "img": "tabbar_icon_shop_default",
+            "name": "工作咖啡廳"
         },
         {
             "vc": "ViewController2",
-            "img": "heart",
+            "img": "tabbar_icon_mine_default",
             "name": "我的"
-        }
+        }   
     ]
 }
