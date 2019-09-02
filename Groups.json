@@ -3,50 +3,66 @@
     [
         {
             "id": 20236779,
+            "name": "Taiwan Android Developer Study Group",
             "categoryName": "Tech",
             "attendeesCount": 834,
             "keyPhoto": "https://secure.meetupstatic.com/photos/event/2/c/9/2/highres_452771410.jpeg",
-            "name": "Taiwan Android Developer Study Group",
             "next_events": [
                 "bsctnqyzmbgb"                
             ]      
         },
         {
-            "categoryName": "Socializing",
-            "attendeesCount": 14263,
-            "keyPhoto": "https://secure.meetupstatic.com/photos/event/2/7/c/5/highres_475450181.jpeg",
             "id": 2013921,
             "name": "Taiwan Travelling & Language Exchange",
+            "categoryName": "Socializing",
+            "attendeesCount": 14263,
+            "keyPhoto": "https://secure.meetupstatic.com/photos/event/2/7/c/5/highres_475450181.jpeg",            
             "next_events": [
                 "lnxcdryzmblb"                
             ]  
         },
         {
+            "id": 14951982,
+            "name": "Taiwan Java User Group",
             "categoryName": "Tech",
             "attendeesCount": 1572,
-            "keyPhoto": "https://secure.meetupstatic.com/photos/event/c/7/c/2/highres_436911138.jpeg",
-            "id": 14951982,
-            "name": "Taiwan Java User Group"
+            "keyPhoto": "https://secure.meetupstatic.com/photos/event/c/7/c/2/highres_436911138.jpeg",            
+            "next_events": [
+                "264123847"                
+            ]  
         },
         {
+            "id": 26355679,
+            "name": "FitFam Taipei - HIIT, Outdoor, Climbing, OCR Training",
             "categoryName": "Fitness",
             "attendeesCount": 1570,
-            "keyPhoto": "https://secure.meetupstatic.com/photos/event/7/6/e/1/highres_479490433.jpeg",
-            "id": 26355679,
-            "name": "FitFam Taipei - HIIT, Outdoor, Climbing, OCR Training"
+            "keyPhoto": "https://secure.meetupstatic.com/photos/event/7/6/e/1/highres_479490433.jpeg",            
+            "next_events": [
+                "nqgmfryzmbdb",
+                "brgmfryzmbgb"
+            ]  
         },
         {
-            "categoryName": "Education & Learning",
-            "attendeesCount": 1369,
-            "keyPhoto": "https://secure.meetupstatic.com/photos/event/1/1/1/7/highres_483964375.jpeg",
-            "id": 24880048,
-            "name": "Sketch & Design - Taipei"
-        },        {
-            "categoryName": "Language & Ethnic Identity",
-            "attendeesCount": 5074,
-            "keyPhoto": "https://secure.meetupstatic.com/photos/event/5/8/d/8/highres_480922744.jpeg",
             "id": 22101430,
-            "name": "Taipei Free Walking Tour"
+            "name": "Taipei Free Walking Tour",
+            "categoryName": "Language & Ethnic Identity",
+            "attendeesCount": 5097,
+            "keyPhoto": "https://secure.meetupstatic.com/photos/event/5/8/d/8/highres_480922744.jpeg",            
+            "next_events": [
+                "pkcsqpyzmbdb",
+                "cmcsqpyzmbdb"
+            ]  
+        },      
+        {
+            "id": 32296721,
+            "name": "FOOD CHINESE SURVIVAL IN TAIWAN",
+            "categoryName": "Food & Drink",
+            "attendeesCount": 246,
+            "keyPhoto": "https://secure.meetupstatic.com/photos/event/2/e/a/1/highres_450131937.jpeg",            
+            "next_events": [
+                "264415114",
+                "263940165"
+            ]
         }
     ]
 }
