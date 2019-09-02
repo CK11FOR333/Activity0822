@@ -6,14 +6,20 @@
             "categoryName": "Tech",
             "attendeesCount": 834,
             "keyPhoto": "https://secure.meetupstatic.com/photos/event/2/c/9/2/highres_452771410.jpeg",
-            "name": "Taiwan Android Developer Study Group"
+            "name": "Taiwan Android Developer Study Group",
+            "next_events": [
+                "bsctnqyzmbgb"                
+            ]      
         },
         {
-            "categoryName": "Language & Ethnic Identity",
-            "attendeesCount": 6402,
-            "keyPhoto": "https://secure.meetupstatic.com/photos/event/d/8/6/1/highres_454675393.jpeg",
-            "id": 18312216,
-            "name": "Lonely Island  (LEIT)"
+            "categoryName": "Socializing",
+            "attendeesCount": 14263,
+            "keyPhoto": "https://secure.meetupstatic.com/photos/event/2/7/c/5/highres_475450181.jpeg",
+            "id": 2013921,
+            "name": "Taiwan Travelling & Language Exchange",
+            "next_events": [
+                "lnxcdryzmblb"                
+            ]  
         },
         {
             "categoryName": "Tech",
