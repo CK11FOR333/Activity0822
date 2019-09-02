@@ -10,6 +10,8 @@ import UIKit
 
 class EventCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var contentBackgroundView: UIView!
+
     @IBOutlet weak var cardView: UIView!
 
     @IBOutlet weak var dateLabel: UILabel!
@@ -73,6 +75,26 @@ extension EventCollectionViewCell {
 //        collectButton.tintColor = Theme.current.tint
         collectButton.setImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
         collectButton.setImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
+    }
+
+}
+
+extension EventCollectionViewCell {
+
+    func applyTheme() {
+        contentBackgroundView.backgroundColor = Theme.current.tableViewBackground
+
+
+        cardView.backgroundColor = Theme.current.tableViewCellBackgorund
+        cardView.shadowColor = Theme.current.shadow
+
+        dateLabel.textColor = Theme.current.tableViewCellLightText
+        nameLabel.textColor = Theme.current.tableViewCellLightText
+        groupNameLabel.textColor = Theme.current.tableViewCellLightText
+        venueNameLabel.textColor = Theme.current.tableViewCellLightText
+        attendeesLabel.textColor = Theme.current.tableViewCellLightText
+
+        locationImageView.tintColor = Theme.current.tint
     }
 
 }

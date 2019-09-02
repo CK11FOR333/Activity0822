@@ -14,4 +14,6 @@ struct Group {
     var categoryName: String
     var attendeesCount: Int
     var keyPhoto: String
+    var description: String
+    var nextEvents: [String]
 }

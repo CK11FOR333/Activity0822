@@ -12,6 +12,8 @@ import AlamofireImage
 
 class GroupCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var shadowBackgroundView: UIView!
+
     @IBOutlet weak var cardView: UIView!
 
     @IBOutlet weak var imageView: UIImageView!
@@ -21,8 +23,6 @@ class GroupCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var attendeesLabel: UILabel!
-
-    @IBOutlet weak var collectButton: UIButton!
 
     var group: Group? {
         didSet {
@@ -64,17 +64,18 @@ class GroupCollectionViewCell: UICollectionViewCell {
 }
 
 extension GroupCollectionViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         cardView.cornerRadius = 10
-        cardView.shadowOffset = CGSize(width: 0, height: 2)
-        cardView.shadowRadius = 2
-        cardView.shadowOpacity = 0.5
-        cardView.layer.masksToBounds = false
+        cardView.clipsToBounds = true
 
-        //        collectButton.tintColor = Theme.current.tint
-        collectButton.setImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        collectButton.setImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
+        shadowBackgroundView.cornerRadius = 10
+        shadowBackgroundView.shadowOffset = CGSize(width: 0, height: 2)
+        shadowBackgroundView.shadowRadius = 2
+        shadowBackgroundView.shadowOpacity = 0.5
+        shadowBackgroundView.clipsToBounds = false
     }
+
 }

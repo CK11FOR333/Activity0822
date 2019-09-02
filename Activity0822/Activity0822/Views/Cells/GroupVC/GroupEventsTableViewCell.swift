@@ -1,22 +1,22 @@
 //
-//  GroupsTableViewCell.swift
+//  GroupEventsTableViewCell.swift
 //  Activity0822
 //
-//  Created by Christmas Kay on 2019/8/27.
+//  Created by Christmas Kay on 2019/9/2.
 //  Copyright © 2019 Christmas Kay. All rights reserved.
 //
 
 import UIKit
 
-protocol GroupsTableViewCellDelegate: class {
-    func groupCellDidClick(at indexPath: IndexPath)
+protocol GroupEventsTableViewCellDelegate: class {
+    func groupEventCellDidClick(at indexPath: IndexPath)
 }
 
-class GroupsTableViewCell: UITableViewCell {
+class GroupEventsTableViewCell: UITableViewCell {
 
-    weak var delegate: GroupsTableViewCellDelegate?
+    weak var delegate: GroupEventsTableViewCellDelegate?
 
-    var cellModels: [Group]? {
+    var cellModels: [Event]? {
         didSet {
             collectionView.reloadData()
         }
@@ -43,14 +43,21 @@ class GroupsTableViewCell: UITableViewCell {
         collectionView.isScrollEnabled = true
         //        collectionView.isPagingEnabled = true
 
-        collectionView.register(nibWithCellClass: GroupCollectionViewCell.self)
+        collectionView.register(nibWithCellClass: EventCollectionViewCell.self)
     }
-    
+
+    func applyTheme() {
+//        contentView.backgroundColor = Theme.current.tableViewBackground
+//        eventTitleLabel.textColor = Theme.current.tableViewCellLightText
+//        eventDescriptionLabel.textColor = Theme.current.tableViewCellLightText
+//        collectionView.backgroundColor = Theme.current.tableViewBackground
+    }
+
 }
 
 // MARK: - UICollectionView DataSource
 
-extension GroupsTableViewCell: UICollectionViewDataSource {
+extension GroupEventsTableViewCell: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -64,8 +71,9 @@ extension GroupsTableViewCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: GroupCollectionViewCell = collectionView.dequeueReusableCell(withClass: GroupCollectionViewCell.self, for: indexPath)
-        cell.group = cellModels![indexPath.item]
+        let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(withClass: EventCollectionViewCell.self, for: indexPath)
+        cell.event = cellModels![indexPath.item]
+        cell.applyTheme()
         return cell
     }
 
@@ -73,22 +81,22 @@ extension GroupsTableViewCell: UICollectionViewDataSource {
 
 // MARK: - UICollectionView Delegate
 
-extension GroupsTableViewCell: UICollectionViewDelegate {
+extension GroupEventsTableViewCell: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.groupCellDidClick(at: indexPath)
+        self.delegate?.groupEventCellDidClick(at: indexPath)
     }
 
 }
 
 // MARK: - UICollectionView FlowLayout
 
-extension GroupsTableViewCell: UICollectionViewDelegateFlowLayout {
+extension GroupEventsTableViewCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = collectionView.frame.size.width - 20
-//        return CGSize(width: width, height: 215)
-        return CGSize(width: 235, height: 280)
+        //        let width = collectionView.frame.size.width - 20
+        //        return CGSize(width: width, height: 215)
+        return CGSize(width: 300, height: 215)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

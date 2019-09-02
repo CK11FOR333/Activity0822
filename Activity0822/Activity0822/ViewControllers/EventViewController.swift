@@ -17,8 +17,6 @@ class EventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    @IBOutlet weak var tableHeaderImageView: UIImageView!
-
     @IBOutlet weak var attendanceButton: UIButton!
 
     @IBOutlet weak var collectionButton: UIButton!
@@ -41,16 +39,35 @@ extension EventViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTableView()
         setupButtons()
         updateUI()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: nil)
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        self.navigationController?.hidesBottomBarWhenPushed = false
+    }
 }
 
 extension EventViewController {
+
+    func setupNavigationBar() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: nil)
+
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
+
+//        if #available(iOS 11.0, *) {
+//            self.navigationController?.navigationBar.prefersLargeTitles = false
+//        } else {
+//            // Fallback on earlier versions
+//        }
+    }
 
 //    @objc func close() {
 //        self.dismiss(animated: true, completion: nil)
@@ -60,9 +77,6 @@ extension EventViewController {
         tableView.dataSource = self
 //        tableView.delegate = self
         tableView.separatorStyle = .none
-
-        tableView.register(nibWithCellClass: EventsTableViewCell.self)
-        tableView.register(nibWithCellClass: GroupsTableViewCell.self)
     }
 
     func setupButtons() {

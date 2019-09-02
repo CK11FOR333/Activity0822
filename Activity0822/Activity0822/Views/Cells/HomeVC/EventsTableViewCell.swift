@@ -22,6 +22,10 @@ class EventsTableViewCell: UITableViewCell {
         }
     }
 
+    @IBOutlet weak var eventTitleLabel: UILabel!
+
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
+
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func awakeFromNib() {
@@ -45,7 +49,14 @@ class EventsTableViewCell: UITableViewCell {
 
         collectionView.register(nibWithCellClass: EventCollectionViewCell.self)
     }
-    
+
+    func applyTheme() {
+        contentView.backgroundColor = Theme.current.tableViewBackground
+        eventTitleLabel.textColor = Theme.current.tableViewCellLightText
+        eventDescriptionLabel.textColor = Theme.current.tableViewCellLightText
+        collectionView.backgroundColor = Theme.current.tableViewBackground
+    }
+
 }
 
 // MARK: - UICollectionView DataSource
@@ -66,6 +77,7 @@ extension EventsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(withClass: EventCollectionViewCell.self, for: indexPath)
         cell.event = cellModels![indexPath.item]
+        cell.applyTheme()
         return cell
     }
 
@@ -92,7 +104,7 @@ extension EventsTableViewCell: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

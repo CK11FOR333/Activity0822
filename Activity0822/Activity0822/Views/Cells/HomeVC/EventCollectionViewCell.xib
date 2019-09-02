@@ -74,8 +74,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQ1-VF-qjB">
-                                        <rect key="frame" x="252" y="160" width="28" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQ1-VF-qjB">
+                                        <rect key="frame" x="237" y="162" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="Cj3-KA-giK"/>
                                             <constraint firstAttribute="height" constant="28" id="eio-19-vHl"/>
@@ -83,7 +83,7 @@
                                         <state key="normal" image="navbar_icon_pick_default"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.43509180494388189" green="0.37581837747674185" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="TrL-aF-Xdq" firstAttribute="top" secondItem="E68-71-Ntp" secondAttribute="bottom" constant="8" id="1zh-oB-Z0R"/>
                                     <constraint firstItem="H9V-dn-CBc" firstAttribute="top" secondItem="F4s-yF-fgm" secondAttribute="bottom" constant="8" id="3sY-5N-xIm"/>
@@ -129,6 +129,7 @@
                 <outlet property="attendeesLabel" destination="kOK-wT-YwM" id="MJc-hK-h7N"/>
                 <outlet property="cardView" destination="ovv-cg-PH6" id="I46-fH-OFV"/>
                 <outlet property="collectButton" destination="FQ1-VF-qjB" id="LCz-sd-70T"/>
+                <outlet property="contentBackgroundView" destination="yI5-aH-bXs" id="7lv-IT-QnH"/>
                 <outlet property="dateLabel" destination="F4s-yF-fgm" id="P7r-om-b65"/>
                 <outlet property="groupNameLabel" destination="E68-71-Ntp" id="FHw-kg-Bbe"/>
                 <outlet property="locationImageView" destination="TrL-aF-Xdq" id="1nD-7x-5NO"/>

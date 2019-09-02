@@ -25,14 +25,43 @@ extension HomeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTableView()
         getEvents()
         getGroups()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        if #available(iOS 11.0, *) {
+//            self.navigationController?.navigationBar.prefersLargeTitles = true
+//        } else {
+//            // Fallback on earlier versions
+//        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        applyTheme()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+
 }
 
 extension HomeViewController {
+
+    func setupNavigationBar() {
+        navigationController?.navigationBar.barStyle = UserDefaults.standard.bool(forKey: "kIsDarkTheme") ? .default : .black
+
+        navigationController?.navigationBar.backgroundColor = Theme.current.navigationBar
+        navigationController?.navigationBar.barTintColor = Theme.current.navigationBar
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = Theme.current.tint
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.tint]
+    }
 
     func setupTableView() {
         tableView.dataSource = self
@@ -41,6 +70,24 @@ extension HomeViewController {
 
         tableView.register(nibWithCellClass: EventsTableViewCell.self)
         tableView.register(nibWithCellClass: GroupsTableViewCell.self)
+    }
+
+    fileprivate func applyTheme() {
+
+
+        view.backgroundColor = Theme.current.tableViewBackground
+        tableView.backgroundColor = Theme.current.tableViewBackground
+        tableView.reloadData()
+
+        self.setupNavigationBar()
+
+        self.tabBarController?.tabBar.barTintColor = Theme.current.tabBar
+        self.tabBarController?.tabBar.tintColor = Theme.current.tint
+        if #available(iOS 10.0, *) {
+            self.tabBarController?.tabBar.unselectedItemTintColor = Theme.current.tabBarUnSelected
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     func getEvents() {
@@ -99,11 +146,13 @@ extension HomeViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.cellModels = self.events
             cell.delegate = self
+            cell.applyTheme()
             return cell
         } else {
             let cell: GroupsTableViewCell = tableView.dequeueReusableCell(withClass: GroupsTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.cellModels = self.groups
+            cell.delegate = self
             return cell
         }
     }
@@ -115,14 +164,13 @@ extension HomeViewController: UITableViewDelegate {
         //
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return 290
-//        }
-//        else {
-//            return 348
-//        }
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return UITableView.automaticDimension
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
 
 }
 
@@ -131,9 +179,19 @@ extension HomeViewController: EventsTableViewCellDelegate {
     func eventCellDidClick(at indexPath: IndexPath) {
         let eventVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
         eventVC.event = self.events[indexPath.item]
-//        let navC = UINavigationController(rootViewController: eventVC)
-//        self.present(navC, animated: true, completion: nil)
-        self.navigationController?.pushViewController(eventVC, animated: true)
+        eventVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(eventVC, animated: true)        
+    }
+
+}
+
+extension HomeViewController: GroupsTableViewCellDelegate {
+
+    func groupCellDidClick(at indexPath: IndexPath) {
+        let groupVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "GroupViewController") as! GroupViewController
+        groupVC.group = self.groups[indexPath.item]
+        groupVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(groupVC, animated: true)       
     }
 
 }

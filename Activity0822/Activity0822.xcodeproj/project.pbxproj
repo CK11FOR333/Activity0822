@@ -80,6 +80,11 @@
 		6AC4ACAA23150AB4003E7EE2 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4ACA823150AB4003E7EE2 /* GroupCollectionViewCell.swift */; };
 		6AC4ACAB23150AB4003E7EE2 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC4ACA923150AB4003E7EE2 /* GroupCollectionViewCell.xib */; };
 		6AC4ACAD23151272003E7EE2 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC4ACAC23151272003E7EE2 /* Group.swift */; };
+		6AE24F25231D05A700FD34F0 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE24F24231D05A700FD34F0 /* GroupViewController.swift */; };
+		6AE24F27231D06DD00FD34F0 /* GroupTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE24F26231D06DD00FD34F0 /* GroupTitleTableViewCell.swift */; };
+		6AE24F29231D06E600FD34F0 /* GroupDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE24F28231D06E600FD34F0 /* GroupDetailTableViewCell.swift */; };
+		6AE24F2C231D0CDB00FD34F0 /* GroupEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE24F2B231D0CDB00FD34F0 /* GroupEventsTableViewCell.swift */; };
+		6AE24F2E231D0CFC00FD34F0 /* GroupEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AE24F2D231D0CFC00FD34F0 /* GroupEventsTableViewCell.xib */; };
 		6AEBAD5D2316767800AED056 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEBAD5C2316767800AED056 /* EventViewController.swift */; };
 		6D1F91D5826E4B3DCDE60868 /* Pods_Activity0822UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC394E4593ECCD5E3111FEA8 /* Pods_Activity0822UITests.framework */; };
 		93ADB8A12B77F34AD6A2EAE9 /* Pods_Activity0822.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D6D48E2F31F4E1C67A440C /* Pods_Activity0822.framework */; };
@@ -185,6 +190,11 @@
 		6AC4ACA823150AB4003E7EE2 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		6AC4ACA923150AB4003E7EE2 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		6AC4ACAC23151272003E7EE2 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		6AE24F24231D05A700FD34F0 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		6AE24F26231D06DD00FD34F0 /* GroupTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTitleTableViewCell.swift; sourceTree = "<group>"; };
+		6AE24F28231D06E600FD34F0 /* GroupDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailTableViewCell.swift; sourceTree = "<group>"; };
+		6AE24F2B231D0CDB00FD34F0 /* GroupEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEventsTableViewCell.swift; sourceTree = "<group>"; };
+		6AE24F2D231D0CFC00FD34F0 /* GroupEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupEventsTableViewCell.xib; sourceTree = "<group>"; };
 		6AEBAD5C2316767800AED056 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8615A96F0D05B27F4B89EC2E /* Pods-Activity0822UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activity0822UITests.release.xcconfig"; path = "Target Support Files/Pods-Activity0822UITests/Pods-Activity0822UITests.release.xcconfig"; sourceTree = "<group>"; };
 		930FC2E800BDE7F742F5B290 /* Pods_Activity0822Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Activity0822Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,8 +373,8 @@
 		6AA7CB59230E8DE0005AC08E /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				6AA7CB5A230E8DE0005AC08E /* LightTheme.swift */,
 				6AA7CB5B230E8DE0005AC08E /* ThemeProtocol.swift */,
+				6AA7CB5A230E8DE0005AC08E /* LightTheme.swift */,
 				6AA7CB5C230E8DE0005AC08E /* DarkTheme.swift */,
 				6AA7CB5D230E8DE0005AC08E /* Theme.swift */,
 			);
@@ -416,6 +426,7 @@
 				6AA7CB8C230E8E62005AC08E /* TypeTwoTableViewCell.xib */,
 				6AA7CB95230E8E62005AC08E /* TypeFourTableViewCell.swift */,
 				6AA7CB93230E8E62005AC08E /* TypeFourTableViewCell.xib */,
+				6AE24F2A231D06EC00FD34F0 /* GroupVC */,
 				6A4A1B132317AB1800EBE472 /* EventVC */,
 				6A45CF7023137DE100956D7B /* HomeVC */,
 			);
@@ -430,6 +441,7 @@
 				6AA7CBCC230F9727005AC08E /* MIxViewController.swift */,
 				6AA7CB08230E58E5005AC08E /* HomeViewController.swift */,
 				6AEBAD5C2316767800AED056 /* EventViewController.swift */,
+				6AE24F24231D05A700FD34F0 /* GroupViewController.swift */,
 				6AA7CBD2230F9D08005AC08E /* SettingsViewController.swift */,
 				6AA7CBD0230F9858005AC08E /* LoginViewController.swift */,
 				6A4296CC23163EA900A0179C /* ViewController.swift */,
@@ -446,6 +458,17 @@
 				6AA7CBC5230E9727005AC08E /* RequestManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		6AE24F2A231D06EC00FD34F0 /* GroupVC */ = {
+			isa = PBXGroup;
+			children = (
+				6AE24F26231D06DD00FD34F0 /* GroupTitleTableViewCell.swift */,
+				6AE24F28231D06E600FD34F0 /* GroupDetailTableViewCell.swift */,
+				6AE24F2B231D0CDB00FD34F0 /* GroupEventsTableViewCell.swift */,
+				6AE24F2D231D0CFC00FD34F0 /* GroupEventsTableViewCell.xib */,
+			);
+			path = GroupVC;
 			sourceTree = "<group>";
 		};
 		D7CDFFF4932250856A87CBD6 /* Pods */ = {
@@ -581,6 +604,7 @@
 				6AA7CBB9230E8EB0005AC08E /* Keys.plist in Resources */,
 				6AA7CBA7230E8E62005AC08E /* BannerTableViewCell.xib in Resources */,
 				6AA7CBA6230E8E62005AC08E /* ImageSectionView.xib in Resources */,
+				6AE24F2E231D0CFC00FD34F0 /* GroupEventsTableViewCell.xib in Resources */,
 				6A45CF6F23137DD800956D7B /* EventCollectionViewCell.xib in Resources */,
 				6AC4ACAB23150AB4003E7EE2 /* GroupCollectionViewCell.xib in Resources */,
 				6AA7CBA3230E8E62005AC08E /* TypeSevenTableViewCell.xib in Resources */,
@@ -745,6 +769,8 @@
 				6AA7CB09230E58E5005AC08E /* HomeViewController.swift in Sources */,
 				6AA7CBB2230E8E62005AC08E /* SwitchTableViewCell.swift in Sources */,
 				6AA7CBD3230F9D08005AC08E /* SettingsViewController.swift in Sources */,
+				6AE24F2C231D0CDB00FD34F0 /* GroupEventsTableViewCell.swift in Sources */,
+				6AE24F29231D06E600FD34F0 /* GroupDetailTableViewCell.swift in Sources */,
 				6AA7CBC8230E9744005AC08E /* LoginManager.swift in Sources */,
 				6AA7CB9D230E8E62005AC08E /* TypeSevenTableViewCell.swift in Sources */,
 				6AA7CB75230E8E17005AC08E /* ActivityCellContent.swift in Sources */,
@@ -773,6 +799,7 @@
 				6AA7CBD1230F9858005AC08E /* LoginViewController.swift in Sources */,
 				6AA7CB6C230E8DFB005AC08E /* Constants.swift in Sources */,
 				6A4296CD23163EA900A0179C /* ViewController.swift in Sources */,
+				6AE24F25231D05A700FD34F0 /* GroupViewController.swift in Sources */,
 				6AC4ACA323138929003E7EE2 /* Event.swift in Sources */,
 				6AA7CBC6230E9727005AC08E /* RequestManager.swift in Sources */,
 				6AC4ACA623150A99003E7EE2 /* GroupsTableViewCell.swift in Sources */,
@@ -782,6 +809,7 @@
 				6AA7CB56230E8DD8005AC08E /* LLFilledPageControl.swift in Sources */,
 				6AA7CB07230E58E4005AC08E /* AppDelegate.swift in Sources */,
 				6AA7CBA4230E8E62005AC08E /* TypeTwoTableViewCell.swift in Sources */,
+				6AE24F27231D06DD00FD34F0 /* GroupTitleTableViewCell.swift in Sources */,
 				6AA7CB45230E8D8B005AC08E /* UIViewController+Extension.swift in Sources */,
 				6AA7CB74230E8E17005AC08E /* Activity.swift in Sources */,
 				6AA7CBAF230E8E62005AC08E /* ButtonCollectionViewCell.swift in Sources */,

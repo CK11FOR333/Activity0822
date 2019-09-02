@@ -9,8 +9,8 @@
 import UIKit
 
 class LightTheme: ThemeProtocol {
-    var navigationBar: UIColor = UIColor(hexString: "23C0AE")!
-    var tabBar: UIColor = UIColor(hexString: "23C0AE")!
+    var navigationBar: UIColor = UIColor(hexString: "2D9CDB")!
+    var tabBar: UIColor = UIColor(hexString: "2D9CDB")!
     var tabBarUnSelected: UIColor = UIColor(hexString: "828282")!
     var tableViewBackground: UIColor = UIColor(hexString: "F2F2F2")!
     var tableViewCellBackgorund: UIColor = UIColor.white
@@ -20,7 +20,7 @@ class LightTheme: ThemeProtocol {
 
     var tableViewCellLightText: UIColor = UIColor(hexString: "333333")!
     var tableViewCellDarkText: UIColor = UIColor.white
-    var accent: UIColor = UIColor(hexString: "23C0AE")!
+    var accent: UIColor = UIColor(hexString: "2D9CDB")!
     var tint: UIColor = UIColor.white
     var shadow: UIColor = UIColor(hexString: "828282")!
 

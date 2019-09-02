@@ -204,11 +204,19 @@ extension RequestManager {
             var groups: [Group] = []
 
             for key in groupsArray {
+                var nextEvents: [String] = []
+                let events = key["next_events"].arrayValue
+                for event in events {
+                    nextEvents.append(event.stringValue)
+                }
+
                 let group = Group(id: key["id"].intValue,
                                   name: key["name"].stringValue,
                                   categoryName: key["categoryName"].stringValue,
                                   attendeesCount: key["attendeesCount"].intValue,
-                                  keyPhoto: key["keyPhoto"].stringValue)
+                                  keyPhoto: key["keyPhoto"].stringValue,
+                                  description: key["description"].stringValue,
+                                  nextEvents: nextEvents)
                 groups.append(group)
             }
 
