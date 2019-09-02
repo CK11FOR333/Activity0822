@@ -29,7 +29,8 @@
             "keyPhoto": "https://secure.meetupstatic.com/photos/event/c/7/c/2/highres_436911138.jpeg",            
             "next_events": [
                 "264123847"                
-            ]  
+            ],
+            "description": "<p>TWJUG 於2006年7月開始舉辦活動，讓使用 Java 的開發者能有地方討論和推廣 Java 和相關技術。不論是各種 JVM 上的程式語言，JVM 相關，Mobile 和 Web 應用程式開發，軟體開發方式...等等，都歡迎大家參與分享。我們每隔一到二個月會在台北舉辦TWJUG聚會，歡迎參加。</p><br><p>Hi, TWJUG is a group of Java Enthusiasts! Come join us to meet other people interested in Java.</p>"
         },
         {
             "id": 26355679,
