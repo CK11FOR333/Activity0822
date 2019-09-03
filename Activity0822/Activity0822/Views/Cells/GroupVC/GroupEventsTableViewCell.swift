@@ -43,7 +43,7 @@ class GroupEventsTableViewCell: UITableViewCell {
         collectionView.isScrollEnabled = true
         //        collectionView.isPagingEnabled = true
 
-        collectionView.register(nibWithCellClass: EventCollectionViewCell.self)
+        collectionView.register(nibWithCellClass: GroupEventCollectionViewCell.self)
     }
 
     func applyTheme() {
@@ -71,7 +71,7 @@ extension GroupEventsTableViewCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(withClass: EventCollectionViewCell.self, for: indexPath)
+        let cell: GroupEventCollectionViewCell = collectionView.dequeueReusableCell(withClass: GroupEventCollectionViewCell.self, for: indexPath)
         cell.event = cellModels![indexPath.item]
         cell.applyTheme()
         return cell
@@ -96,7 +96,7 @@ extension GroupEventsTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //        let width = collectionView.frame.size.width - 20
         //        return CGSize(width: width, height: 215)
-        return CGSize(width: 300, height: 215)
+        return CGSize(width: 300, height: 182)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

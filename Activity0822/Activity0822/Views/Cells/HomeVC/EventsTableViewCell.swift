@@ -10,6 +10,7 @@ import UIKit
 
 protocol EventsTableViewCellDelegate: class {
     func eventCellDidClick(at indexPath: IndexPath)
+
 }
 
 class EventsTableViewCell: UITableViewCell {
@@ -78,6 +79,7 @@ extension EventsTableViewCell: UICollectionViewDataSource {
         let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(withClass: EventCollectionViewCell.self, for: indexPath)
         cell.event = cellModels![indexPath.item]
         cell.applyTheme()
+//        cell.delegate = self
         return cell
     }
 
@@ -116,3 +118,14 @@ extension EventsTableViewCell: UICollectionViewDelegateFlowLayout {
     }
 
 }
+//
+//extension EventsTableViewCell: EventCollectionViewCellDelegate {
+//
+//    func didClickCollectButton(_ sender: UIButton, at indexPath: IndexPath) {
+//        var event: Event
+//        if loginManager.isLogin {
+//            var isCollected = false
+//        }
+//    }
+//
+//}

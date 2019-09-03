@@ -20,11 +20,11 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mf-Nl-JUW">
-                        <rect key="frame" x="20" y="8" width="181" height="27"/>
+                        <rect key="frame" x="20" y="8" width="160.5" height="27"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="27" id="nZR-sk-XCe"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

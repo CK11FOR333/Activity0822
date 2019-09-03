@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol EventCollectionViewCellDelegate: class {
+    func didClickCollectButton(_ sender: UIButton, at indexPath: IndexPath)
+}
+
 class EventCollectionViewCell: UICollectionViewCell {
+
+    // MARK: IBOutlets
 
     @IBOutlet weak var contentBackgroundView: UIView!
 
@@ -28,6 +34,45 @@ class EventCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectButton: UIButton!
 
+    // MARK: IBActions
+
+    @IBAction func clickCollectButton(_ sender: UIButton) {
+//        delegate?.didClickCollectButton(sender, at: indexPath)
+
+        if loginManager.isLogin {
+            var isCollected = false
+            favoriteManager.isEventCollected(self.event!) { [weak self] (collected) in
+                guard let strongSelf = self else { return }
+
+                isCollected = collected
+
+                if isCollected {
+                    favoriteManager.removeFavoriteEvent(strongSelf.event!)
+                } else {
+                    favoriteManager.addFavoriteEvent(strongSelf.event!)
+                }
+
+                isCollected = !isCollected
+                sender.isSelected = isCollected
+                if isCollected {
+                    sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: {
+                        sender.transform = .identity
+                    }, completion: nil)
+                }
+            }
+
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name.loginFirst, object: nil, userInfo: nil)
+        }
+    }
+
+    // MARK: Variables
+
+    var indexPath: IndexPath!
+
+    weak var delegate: EventCollectionViewCellDelegate?
+
     var event: Event? {
         didSet {
             if let event = event {
@@ -41,18 +86,14 @@ class EventCollectionViewCell: UICollectionViewCell {
 
                 attendeesLabel.text = "\(event.yesRsvpCount) attendees"
 
-//                var isCollected = false
-//                favoriteManager.isCafeCollected(cafe) { [weak self] (collected) in
-//                    isCollected = collected
-//
-//
-//                    self?.collectButton.isSelected = isCollected ? true : false
-//                    //                collectButton.tintColor = isCollected ? UIColor(hexString: "EB5757") : Theme.current.tint
-//                    self?.collectButton.tintColor = Theme.current.tint
-//                    //                if !isCollected {
-//                    //
-//                    //                }
-//                }
+                var isCollected = false
+                favoriteManager.isEventCollected(event) { [weak self] (collected) in
+                    guard let strongSelf = self else { return }
+
+                    isCollected = collected
+
+                    strongSelf.collectButton.isSelected = isCollected ? true : false
+                }
             }
         }
     }

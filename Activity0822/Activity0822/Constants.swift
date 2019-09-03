@@ -13,3 +13,13 @@ let userDefaults = UserDefaults.standard
 let appBundleIdentifier = Bundle.main.bundleIdentifier ?? ""
 let appVersionString = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
 let appBuildString = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+
+
+extension Notification.Name {
+    static let loginFirst = Notification.Name("loginFirstNotification")
+}
+
+enum AlertTitle: String {
+    case loginFirst = "Log in to use the function"
+    case logoutSucceed = "Log out succeed"
+}

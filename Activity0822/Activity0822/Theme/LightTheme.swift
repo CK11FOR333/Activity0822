@@ -25,6 +25,5 @@ class LightTheme: ThemeProtocol {
     var shadow: UIColor = UIColor(hexString: "828282")!
 
     var fullStar: UIColor = UIColor(hexString: "F1C84B")!
-    var cornerButton: UIColor = UIColor(hexString: "755C49")!
-//    var cornerButton: UIColor = UIColor(hexString: "67B3EC")!
+    var cornerButton: UIColor = UIColor(hexString: "33B6FF")!
 }

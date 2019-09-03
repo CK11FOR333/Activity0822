@@ -26,6 +26,8 @@ target 'Activity0822' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   
   pod 'SwiftLint'
 

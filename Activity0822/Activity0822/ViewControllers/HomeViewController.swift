@@ -33,11 +33,7 @@ extension HomeViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        if #available(iOS 11.0, *) {
-//            self.navigationController?.navigationBar.prefersLargeTitles = true
-//        } else {
-//            // Fallback on earlier versions
-//        }
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoginAlert(_:)), name: NSNotification.Name.loginFirst, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,13 +41,21 @@ extension HomeViewController {
         applyTheme()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 
 }
 
 extension HomeViewController {
+
+    @objc fileprivate func showLoginAlert(_ notification: Notification) {
+        appDelegate.presentAlertView(AlertTitle.loginFirst.rawValue, message: nil) {
+            let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.navigationController?.pushViewController(loginVC)
+        }
+    }
 
     func setupNavigationBar() {
         navigationController?.navigationBar.barStyle = UserDefaults.standard.bool(forKey: "kIsDarkTheme") ? .default : .black

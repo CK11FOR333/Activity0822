@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController {
 
     let selectedBackgroundView = UIView()
 
-    var loginTitle: String = "登入"
+    var loginTitle: String = "Log In"
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -28,10 +28,10 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if loginManager.isLogin {
-            loginTitle = "登出"
+            loginTitle = "Log Out"
             tableView.reloadData()
         } else {
-            loginTitle = "登入"
+            loginTitle = "Log In"
             tableView.reloadData()
         }
     }
@@ -86,7 +86,7 @@ class SettingsViewController: UIViewController {
         mailController.navigationBar.tintColor = Theme.current.accent
         mailController.mailComposeDelegate = self
 
-        mailController.setSubject("小蘭助手 \(appVersionString)")
+        mailController.setSubject("GroopUp \(appVersionString)")
 
         let toRecipients = ["kay_hsiao@zonvan.com.tw"]
         mailController.setToRecipients(toRecipients)
@@ -104,7 +104,7 @@ extension SettingsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return 3
         } else if section == 1 {
             return 5
         } else {
@@ -114,21 +114,58 @@ extension SettingsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.accessoryType = .disclosureIndicator
-            cell.textLabel?.text = "我的收藏"
-            cell.textLabel?.textColor = Theme.current.tableViewCellLightText
-            cell.detailTextLabel?.text = nil
-            cell.backgroundColor = Theme.current.tableViewCellBackgorund
-            cell.selectedBackgroundView = selectedBackgroundView
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+                cell.accessoryType = .none
+                cell.textLabel?.text = "Account"
+                cell.textLabel?.textColor = Theme.current.tableViewCellLightText
+                cell.detailTextLabel?.text = loginManager.accountEmail
+                cell.backgroundColor = Theme.current.tableViewCellBackgorund
+                cell.selectedBackgroundView = selectedBackgroundView
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
+                cell.accessoryType = .disclosureIndicator
+                cell.textLabel?.text = "Attendees"
+                cell.textLabel?.textColor = Theme.current.tableViewCellLightText
+                cell.detailTextLabel?.text = nil
+                cell.backgroundColor = Theme.current.tableViewCellBackgorund
+                cell.selectedBackgroundView = selectedBackgroundView
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell", for: indexPath) as! SwitchTableViewCell
 
-            return cell
+                cell.isDarkMode = false
+
+                cell.titleLabel.text = "Notifications"
+                cell.delegate = self
+
+                if !loginManager.isLogin {
+                    cell.switch.setOn(false, animated: true)
+                }
+
+                cell.backgroundColor = Theme.current.tableViewCellBackgorund
+                //            cell.selectedBackgroundView = selectedBackgroundView
+
+                cell.selectionStyle = .none
+
+                cell.applyTheme()
+                return cell
+            default:
+                assertionFailure("no match cell with type")
+                let cell = UITableViewCell()
+                return cell
+            }
+
         } else if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell", for: indexPath) as! SwitchTableViewCell
 
-                cell.titleLabel.text = "夜間模式"
+                cell.isDarkMode = true
+
+                cell.titleLabel.text = "Dark Mode"
                 cell.delegate = self
 
                 if UserDefaults.standard.bool(forKey: "kIsDarkTheme") {
@@ -142,37 +179,37 @@ extension SettingsViewController: UITableViewDataSource {
                 cell.selectionStyle = .none
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.text = "回報問題"
+                cell.textLabel?.text = "Reply Problems"
                 cell.textLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.detailTextLabel?.text = nil
                 cell.backgroundColor = Theme.current.tableViewCellBackgorund
                 cell.selectedBackgroundView = selectedBackgroundView
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.text = "隱私權政策"
+                cell.textLabel?.text = "Privacy"
                 cell.textLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.detailTextLabel?.text = nil
                 cell.backgroundColor = Theme.current.tableViewCellBackgorund
                 cell.selectedBackgroundView = selectedBackgroundView
                 return cell
             case 3:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.text = "資料來源"
+                cell.textLabel?.text = "Terms of Service"
                 cell.textLabel?.textColor = Theme.current.tableViewCellLightText
-                cell.detailTextLabel?.text = "Cafe Nomad 工作咖啡廳"
+                cell.detailTextLabel?.text = nil
                 cell.detailTextLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.backgroundColor = Theme.current.tableViewCellBackgorund
                 cell.selectedBackgroundView = selectedBackgroundView
                 return cell
             case 4:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.text = "關於"
+                cell.textLabel?.text = "About"
                 cell.textLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.detailTextLabel?.text = nil
                 cell.backgroundColor = Theme.current.tableViewCellBackgorund
@@ -185,7 +222,7 @@ extension SettingsViewController: UITableViewDataSource {
             let cell = UITableViewCell()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
             cell.accessoryType = .disclosureIndicator
             cell.textLabel?.text = loginTitle
             cell.textLabel?.textColor = Theme.current.tableViewCellLightText
@@ -202,9 +239,9 @@ extension SettingsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "我的"
+            return "My"
         } else if section == 1 {
-            return "其他"
+            return "Others"
         } else {
             return nil
         }
@@ -222,15 +259,17 @@ extension SettingsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.section == 0 {
-            if loginManager.isLogin {
-//                let myCollectedVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "MyCollectedViewController") as! MyCollectedViewController
-//                navigationController?.pushViewController(myCollectedVC)
-            } else {
-                appDelegate.presentAlertView("登入以使用收藏功能", message: nil) {
-                    let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                    self.navigationController?.pushViewController(loginVC)
+            if indexPath.row != 0 {
+                if loginManager.isLogin {
+                    //
+                } else {
+                    appDelegate.presentAlertView(AlertTitle.loginFirst.rawValue, message: nil) {
+                        let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        self.navigationController?.pushViewController(loginVC)
+                    }
                 }
             }
+
         } else if indexPath.section == 1 {
             switch indexPath.row {
             case 1:
@@ -275,7 +314,16 @@ extension SettingsViewController: UITableViewDelegate {
 
 }
 
+// MARK: - SwitchTableViewCellDelegate
+
 extension SettingsViewController: SwitchTableViewCellDelegate {
+
+    func showLoginAlert() {
+        appDelegate.presentAlertView(AlertTitle.loginFirst.rawValue, message: nil) {
+            let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.navigationController?.pushViewController(loginVC)
+        }
+    }
 
     func switchTheme() {
         applyTheme()
@@ -286,12 +334,17 @@ extension SettingsViewController: SwitchTableViewCellDelegate {
 // MARK: - MF Mail compose view controller delegate
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate {
+
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
+
 }
 
+// MARK: - LoginManagerDelegate
+
 extension SettingsViewController: LoginManagerDelegate {
+
     func signUpSuccess() {
         //
     }
@@ -314,8 +367,8 @@ extension SettingsViewController: LoginManagerDelegate {
 
     func logoutSuccess() {
 //        realmManager.removeAllCafes()
-        appDelegate.presentAlertView("登出成功", message: nil) {
-            self.loginTitle = "登入"
+        appDelegate.presentAlertView(AlertTitle.logoutSucceed.rawValue, message: nil) {
+            self.loginTitle = "Log In"
             self.tableView.reloadData()
         }
     }

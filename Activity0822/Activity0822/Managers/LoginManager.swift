@@ -84,7 +84,11 @@ final class LoginManager: NSObject {
     }
 
     func clearAccountValue() {
+        accountPhotoUrl = ""
         accountProvider = ""
+        accountEmail = ""
+        accountName = ""
+        accountID = ""
 //        FBSDKLoginManager().logOut()
         GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().disconnect()

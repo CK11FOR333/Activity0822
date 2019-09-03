@@ -11,7 +11,7 @@ import SwiftyJSON
 
 enum MyViewControllerType: String {
     case viewController0 = "GroupUp"
-    case viewController1 = "地圖"
+    case viewController1 = "Collections"
     case viewController2 = "Settings"
     case viewController3 = "自定義介面0" // Brand.json
     case viewController4 = "自定義介面1" // Coffee.json
@@ -78,13 +78,13 @@ class MainTabBarController: UITabBarController {
                 vcs.append(homeNav)
 
             case "ViewController1":
-//                let collectiveVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-//                collectiveVC.navigationItem.title = MyViewControllerType.viewController1.rawValue
-//                let collectiveNav = UINavigationController.init(rootViewController: collectiveVC)
-//                collectiveNav.tabBarItem.image = UIImage(named: "tabbar_icon_map_default")
-//                collectiveNav.tabBarItem.title = MyViewControllerType.viewController1.rawValue
-//
-//                vcs.append(collectiveNav)
+                let collectiveVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionsViewController") as! CollectionsViewController
+                collectiveVC.navigationItem.title = MyViewControllerType.viewController1.rawValue
+                let collectiveNav = UINavigationController.init(rootViewController: collectiveVC)
+                collectiveNav.tabBarItem.image = UIImage(named: "navbar_icon_picked_default")
+                collectiveNav.tabBarItem.title = MyViewControllerType.viewController1.rawValue
+
+                vcs.append(collectiveNav)
                 continue
 
             case "ViewController2":

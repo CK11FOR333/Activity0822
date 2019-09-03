@@ -17,7 +17,16 @@ class EventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    @IBOutlet weak var attendanceButton: UIButton!
+    @IBOutlet weak var attendanceButton: UIButton! {
+        didSet {
+//            if attendanceButton.isSelected {
+//                attendanceButton.backgroundColor = DarkTheme().accent
+//
+//            } else {
+//
+//            }
+        }
+    }
 
     @IBOutlet weak var collectionButton: UIButton!
 
@@ -26,11 +35,36 @@ class EventViewController: UIViewController {
 extension EventViewController {
 
     @IBAction func clickAttendanceButton(_ sender: UIButton) {
-
+//        sender.isSelected = !sender.isSelected
     }
 
     @IBAction func clickCollectionButton(_ sender: UIButton) {
+        if loginManager.isLogin {
+            var isCollected = false
+            favoriteManager.isEventCollected(self.event!) { [weak self] (collected) in
+                guard let strongSelf = self else { return }
 
+                isCollected = collected
+
+                if isCollected {
+                    favoriteManager.removeFavoriteEvent(strongSelf.event!)
+                } else {
+                    favoriteManager.addFavoriteEvent(strongSelf.event!)
+                }
+
+                isCollected = !isCollected
+                sender.isSelected = isCollected
+                if isCollected {
+                    sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: {
+                        sender.transform = .identity
+                    }, completion: nil)
+                }
+            }
+
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name.loginFirst, object: nil, userInfo: nil)
+        }
     }
 
 }
@@ -45,13 +79,26 @@ extension EventViewController {
         updateUI()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        self.navigationController?.hidesBottomBarWhenPushed = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoginAlert(_:)), name: NSNotification.Name.loginFirst, object: nil)
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+
 }
 
 extension EventViewController {
+
+    @objc fileprivate func showLoginAlert(_ notification: Notification) {
+        appDelegate.presentAlertView(AlertTitle.loginFirst.rawValue, message: nil) {
+            let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.navigationController?.pushViewController(loginVC)
+        }
+    }
 
     func setupNavigationBar() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: nil)
@@ -81,25 +128,28 @@ extension EventViewController {
 
     func setupButtons() {
         attendanceButton.cornerRadius = 13
-    }
+        attendanceButton.isSelected = false
 
-    func setupImageView() {
-        if event != nil {
-//            if let url = URL(string: event.) {
-//                let filter = ScaledToSizeFilter(size: imageView.frame.size)
-//
-//                imageView.af_setImage(
-//                    withURL: url,
-//                    placeholderImage: UIImage.init(color: .white, size: CGSize.zero),
-//                    filter: filter,
-//                    imageTransition: .crossDissolve(0.2)
-//                )
-//            }
-        }
+//        collectionButton.setImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
+//        collectionButton.setImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
+
+        collectionButton.setBackgroundImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        collectionButton.setBackgroundImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
+
     }
 
     func updateUI() {
-        if event != nil {
+        if let event = event {
+
+            var isCollected = false
+            favoriteManager.isEventCollected(event) { [weak self] (collected) in
+                guard let strongSelf = self else { return }
+
+                isCollected = collected
+
+                strongSelf.collectionButton.isSelected = isCollected ? true : false
+            }
+
             tableView.reloadData()
         }
     }

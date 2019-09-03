@@ -188,7 +188,9 @@ extension RequestManager {
                                   link: key["link"].stringValue,
                                   description: key["description"].stringValue,
                                   visibility: key["visibility"].stringValue,
-                                  memberPayFee: key["member_pay_fee"].boolValue)
+                                  memberPayFee: key["member_pay_fee"].boolValue,
+                                  users: [])
+
                 events.append(event)
             }
 
