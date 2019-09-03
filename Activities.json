@@ -7,6 +7,11 @@
             "name": "GroupUp"
         },
         {
+            "vc": "ViewController1",
+            "img": "navbar_icon_picked_default",
+            "name": "Collections"
+        },
+        {
             "vc": "ViewController2",
             "img": "tabbar_icon_mine_default",
             "name": "Settings"
