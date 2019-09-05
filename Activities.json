@@ -15,6 +15,16 @@
             "vc": "ViewController2",
             "img": "tabbar_icon_mine_default",
             "name": "Settings"
-        }   
+        },
+        {
+            "vc": "ViewController3",
+            "img": "tabbar_icon_mine_default",
+            "name": "Settings"
+        },
+        {
+            "vc": "ViewController4",
+            "img": "tabbar_icon_mine_default",
+            "name": "Settings"
+        }  
     ]
 }
