@@ -80,7 +80,14 @@ class MainTabBarController: UITabBarController {
             case "ViewController1":
                 let collectiveVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionsViewController") as! CollectionsViewController
                 collectiveVC.navigationItem.title = MyViewControllerType.viewController1.rawValue
+
                 let collectiveNav = UINavigationController.init(rootViewController: collectiveVC)
+                if #available(iOS 11.0, *) {
+                    collectiveNav.navigationBar.prefersLargeTitles = true
+                } else {
+                    // Fallback on earlier versions
+                }
+
                 collectiveNav.tabBarItem.image = UIImage(named: "navbar_icon_picked_default")
                 collectiveNav.tabBarItem.title = MyViewControllerType.viewController1.rawValue
 
@@ -90,7 +97,14 @@ class MainTabBarController: UITabBarController {
             case "ViewController2":
                 let settingVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingViewController") as! SettingsViewController
                 settingVC.navigationItem.title = MyViewControllerType.viewController2.rawValue
+
                 let settingNav = UINavigationController.init(rootViewController: settingVC)
+                if #available(iOS 11.0, *) {
+                    settingNav.navigationBar.prefersLargeTitles = true
+                } else {
+                    // Fallback on earlier versions
+                }
+
                 settingNav.tabBarItem.image = UIImage(named: "tabbar_icon_mine_default")
                 settingNav.tabBarItem.title = MyViewControllerType.viewController2.rawValue
 

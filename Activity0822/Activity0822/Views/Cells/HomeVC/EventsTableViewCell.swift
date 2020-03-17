@@ -54,7 +54,7 @@ class EventsTableViewCell: UITableViewCell {
     func applyTheme() {
         contentView.backgroundColor = Theme.current.tableViewBackground
         eventTitleLabel.textColor = Theme.current.tableViewCellLightText
-        eventDescriptionLabel.textColor = Theme.current.tableViewCellLightText
+        eventDescriptionLabel.textColor = Theme.current.tabBarUnSelected
         collectionView.backgroundColor = Theme.current.tableViewBackground
     }
 
@@ -79,7 +79,6 @@ extension EventsTableViewCell: UICollectionViewDataSource {
         let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(withClass: EventCollectionViewCell.self, for: indexPath)
         cell.event = cellModels![indexPath.item]
         cell.applyTheme()
-//        cell.delegate = self
         return cell
     }
 
@@ -118,14 +117,3 @@ extension EventsTableViewCell: UICollectionViewDelegateFlowLayout {
     }
 
 }
-//
-//extension EventsTableViewCell: EventCollectionViewCellDelegate {
-//
-//    func didClickCollectButton(_ sender: UIButton, at indexPath: IndexPath) {
-//        var event: Event
-//        if loginManager.isLogin {
-//            var isCollected = false
-//        }
-//    }
-//
-//}

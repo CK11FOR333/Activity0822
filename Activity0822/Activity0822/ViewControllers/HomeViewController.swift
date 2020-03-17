@@ -27,8 +27,7 @@ extension HomeViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
-        getEvents()
-        getGroups()
+        refresh()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +71,16 @@ extension HomeViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
 
+        refreshControl = UIRefreshControl()
+
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            // Fallback on earlier versions
+            tableView.addSubview(refreshControl)
+        }
+
         tableView.register(nibWithCellClass: EventsTableViewCell.self)
         tableView.register(nibWithCellClass: GroupsTableViewCell.self)
     }
@@ -92,6 +101,13 @@ extension HomeViewController {
         } else {
             // Fallback on earlier versions
         }
+
+        refreshControl.tintColor = Theme.current.tint
+    }
+
+    @objc func refresh() {
+        getEvents()
+        getGroups()
     }
 
     func getEvents() {
@@ -99,10 +115,10 @@ extension HomeViewController {
             guard let strongSelf = self else { return }
             strongSelf.events = events
             if #available(iOS 10.0, *) {
-//                strongSelf.tableView.refreshControl?.endRefreshing()
+                strongSelf.tableView.refreshControl?.endRefreshing()
             } else {
                 // Fallback on earlier versions
-//                strongSelf.refreshControl.endRefreshing()
+                strongSelf.refreshControl.endRefreshing()
             }
 
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
@@ -118,10 +134,10 @@ extension HomeViewController {
             guard let strongSelf = self else { return }
             strongSelf.groups = groups
             if #available(iOS 10.0, *) {
-                //                strongSelf.tableView.refreshControl?.endRefreshing()
+                 strongSelf.tableView.refreshControl?.endRefreshing()
             } else {
                 // Fallback on earlier versions
-                //                strongSelf.refreshControl.endRefreshing()
+                strongSelf.refreshControl.endRefreshing()
             }
 
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
@@ -157,6 +173,7 @@ extension HomeViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.cellModels = self.groups
             cell.delegate = self
+            cell.applyTheme()
             return cell
         }
     }

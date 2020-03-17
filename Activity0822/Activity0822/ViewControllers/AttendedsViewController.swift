@@ -1,14 +1,14 @@
 //
-//  CollectionsViewController.swift
+//  AttendedsViewController.swift
 //  Activity0822
 //
-//  Created by Christmas Kay on 2019/9/3.
+//  Created by Christmas Kay on 2019/9/5.
 //  Copyright © 2019 Christmas Kay. All rights reserved.
 //
 
 import UIKit
 
-class CollectionsViewController: UIViewController {
+class AttendedsViewController: UIViewController {
 
     var cellModels: [Event]? {
         didSet {
@@ -18,22 +18,9 @@ class CollectionsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    @IBOutlet weak var loginView: UIView!
-
-    @IBOutlet weak var loginButton: UIButton! {
-        didSet {
-            loginButton.cornerRadius = 20
-        }
-    }
-
-    @IBAction func clickLoginButton(_ sender: UIButton) {
-        let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(loginVC)
-    }
-
 }
 
-extension CollectionsViewController {
+extension AttendedsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +30,7 @@ extension CollectionsViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkLogin()
+        getAttendeds()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -53,9 +40,17 @@ extension CollectionsViewController {
 
 }
 
-extension CollectionsViewController {
+extension AttendedsViewController {
 
     func setupNavigationBar() {
+        self.navigationItem.title = "Attended Events"
+
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
+        
         navigationController?.navigationBar.barStyle = UserDefaults.standard.bool(forKey: "kIsDarkTheme") ? .default : .black
 
         navigationController?.navigationBar.backgroundColor = Theme.current.navigationBar
@@ -75,23 +70,14 @@ extension CollectionsViewController {
         collectionView.register(nibWithCellClass: EventCollectionViewCell.self)
     }
 
-    fileprivate func checkLogin() {
-        if loginManager.isLogin {
-            loginView.isHidden = true
-            getCollections()
-        } else {
-            loginView.isHidden = false
-        }
-    }
-
     fileprivate func applyTheme() {
         collectionView.backgroundColor = Theme.current.tableViewBackground
 
         setupNavigationBar()
     }
 
-    fileprivate func getCollections() {
-        favoriteManager.getCollectedEvents { [weak self] (collected) in
+    fileprivate func getAttendeds() {
+        favoriteManager.getAttendedEvents { [weak self] (collected) in
             guard let strongSelf = self else { return }
             strongSelf.cellModels = collected
         }
@@ -101,7 +87,7 @@ extension CollectionsViewController {
 
 // MARK: - UICollectionView DataSource
 
-extension CollectionsViewController: UICollectionViewDataSource {
+extension AttendedsViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -126,17 +112,17 @@ extension CollectionsViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionView Delegate
 
-extension CollectionsViewController: UICollectionViewDelegate {
+extension AttendedsViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.delegate?.eventCellDidClick(at: indexPath)
+        //        self.delegate?.eventCellDidClick(at: indexPath)
     }
 
 }
 
 // MARK: - UICollectionView FlowLayout
 
-extension CollectionsViewController: UICollectionViewDelegateFlowLayout {
+extension AttendedsViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let dev = UIDevice.current.userInterfaceIdiom

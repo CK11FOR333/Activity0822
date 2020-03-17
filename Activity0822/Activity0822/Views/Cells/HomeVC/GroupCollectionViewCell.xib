@@ -105,6 +105,7 @@
                 <outlet property="attendeesLabel" destination="amW-aN-1i5" id="4qK-yf-aqk"/>
                 <outlet property="cardView" destination="PwW-0l-k7m" id="DeD-e8-OmG"/>
                 <outlet property="categoryLabel" destination="pgb-Sz-hkX" id="FcR-TS-X1u"/>
+                <outlet property="contentBackgroundView" destination="Gs8-Jz-RiU" id="Wbh-fe-NDv"/>
                 <outlet property="imageView" destination="391-ZE-MSx" id="lFH-YI-6Xq"/>
                 <outlet property="shadowBackgroundView" destination="r8Q-QM-ws5" id="BOu-6i-1VQ"/>
                 <outlet property="titleLabel" destination="MV3-WC-Qih" id="nRs-ND-k6j"/>

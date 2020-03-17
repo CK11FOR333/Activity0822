@@ -32,7 +32,7 @@ class EventTitleTableViewCell: UITableViewCell {
 }
 
 extension EventTitleTableViewCell {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -42,6 +42,18 @@ extension EventTitleTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+}
+
+extension EventTitleTableViewCell {
+
+    func applyTheme() {
+        contentView.backgroundColor = Theme.current.tableViewBackground
+        eventTitleLabel.textColor = Theme.current.tableViewCellLightText
+        groupTitleLabel.textColor = Theme.current.tabBarUnSelected
+        dateLabel.textColor = Theme.current.dateLabel
+        addressLabel.textColor = Theme.current.tableViewCellSelectedBackground
     }
 
 }

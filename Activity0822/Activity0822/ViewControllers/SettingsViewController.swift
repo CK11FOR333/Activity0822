@@ -121,13 +121,14 @@ extension SettingsViewController: UITableViewDataSource {
                 cell.textLabel?.text = "Account"
                 cell.textLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.detailTextLabel?.text = loginManager.accountEmail
+                cell.detailTextLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.backgroundColor = Theme.current.tableViewCellBackgorund
                 cell.selectedBackgroundView = selectedBackgroundView
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath)
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.text = "Attendees"
+                cell.textLabel?.text = "Attended Events"
                 cell.textLabel?.textColor = Theme.current.tableViewCellLightText
                 cell.detailTextLabel?.text = nil
                 cell.backgroundColor = Theme.current.tableViewCellBackgorund
@@ -261,7 +262,10 @@ extension SettingsViewController: UITableViewDelegate {
         if indexPath.section == 0 {
             if indexPath.row != 0 {
                 if loginManager.isLogin {
-                    //
+                    if indexPath.row == 1 {
+                        let attendedVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "AttendedsViewController") as! AttendedsViewController
+                        self.navigationController?.pushViewController(attendedVC)
+                    }
                 } else {
                     appDelegate.presentAlertView(AlertTitle.loginFirst.rawValue, message: nil) {
                         let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController

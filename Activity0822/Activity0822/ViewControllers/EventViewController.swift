@@ -17,16 +17,11 @@ class EventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    @IBOutlet weak var attendanceButton: UIButton! {
-        didSet {
-//            if attendanceButton.isSelected {
-//                attendanceButton.backgroundColor = DarkTheme().accent
-//
-//            } else {
-//
-//            }
-        }
-    }
+    @IBOutlet weak var bottomBackgroundView: UIView!
+
+    @IBOutlet weak var bottomBackgroundShadowView: UIView!
+
+    @IBOutlet weak var attendanceButton: UIButton!
 
     @IBOutlet weak var collectionButton: UIButton!
 
@@ -35,7 +30,27 @@ class EventViewController: UIViewController {
 extension EventViewController {
 
     @IBAction func clickAttendanceButton(_ sender: UIButton) {
-//        sender.isSelected = !sender.isSelected
+        if loginManager.isLogin {
+            var isCollected = false
+            favoriteManager.isEventAttended(self.event!) { [weak self] (collected) in
+                guard let strongSelf = self else { return }
+
+                isCollected = collected
+
+                if isCollected {
+                    favoriteManager.removeAttendedEvent(strongSelf.event!)
+                } else {
+                    favoriteManager.attendEvent(strongSelf.event!)
+                }
+
+                isCollected = !isCollected
+                sender.isSelected = isCollected
+
+            }
+
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name.loginFirst, object: nil, userInfo: nil)
+        }
     }
 
     @IBAction func clickCollectionButton(_ sender: UIButton) {
@@ -84,6 +99,11 @@ extension EventViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showLoginAlert(_:)), name: NSNotification.Name.loginFirst, object: nil)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        applyTheme()
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -101,6 +121,7 @@ extension EventViewController {
     }
 
     func setupNavigationBar() {
+        self.navigationItem.title = "Event"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: nil)
 
         if #available(iOS 11.0, *) {
@@ -108,17 +129,7 @@ extension EventViewController {
         } else {
             // Fallback on earlier versions
         }
-
-//        if #available(iOS 11.0, *) {
-//            self.navigationController?.navigationBar.prefersLargeTitles = false
-//        } else {
-//            // Fallback on earlier versions
-//        }
     }
-
-//    @objc func close() {
-//        self.dismiss(animated: true, completion: nil)
-//    }
 
     func setupTableView() {
         tableView.dataSource = self
@@ -127,15 +138,19 @@ extension EventViewController {
     }
 
     func setupButtons() {
+        attendanceButton.setBackgroundImage(UIImage.init(color: UIColor.white, size: attendanceButton.size), for: .normal)
+        attendanceButton.setBackgroundImage(UIImage.init(color: LightTheme().accent, size: attendanceButton.size), for: .selected)
+        attendanceButton.setTitleColor(LightTheme().accent, for: .normal)
+        attendanceButton.setTitleColor(UIColor.white, for: .selected)
+        attendanceButton.setTitle("Attend", for: .normal)
+        attendanceButton.setTitle("Attended", for: .selected)
         attendanceButton.cornerRadius = 13
+        attendanceButton.layer.borderColor = LightTheme().accent.cgColor
+        attendanceButton.layer.borderWidth = 2
         attendanceButton.isSelected = false
-
-//        collectionButton.setImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
-//        collectionButton.setImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
 
         collectionButton.setBackgroundImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
         collectionButton.setBackgroundImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
-
     }
 
     func updateUI() {
@@ -150,8 +165,24 @@ extension EventViewController {
                 strongSelf.collectionButton.isSelected = isCollected ? true : false
             }
 
+            var isAttened = false
+            favoriteManager.isEventAttended(event) { [weak self] (attended) in
+                guard let strongSelf = self else { return }
+
+                isAttened = attended
+
+                strongSelf.attendanceButton.isSelected = isAttened ? true : false
+            }
+
             tableView.reloadData()
         }
+    }
+
+    fileprivate func applyTheme() {
+        tableView.backgroundColor = Theme.current.tableViewBackground
+        tableView.reloadData()
+        bottomBackgroundView.backgroundColor = Theme.current.tableViewCellBackgorund
+        bottomBackgroundShadowView.backgroundColor = Theme.current.shadow
     }
 
 }
@@ -171,11 +202,13 @@ extension EventViewController: UITableViewDataSource {
             let cell: EventTitleTableViewCell = tableView.dequeueReusableCell(withClass:  EventTitleTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.event = self.event
+            cell.applyTheme()
             return cell
         } else {
             let cell: EventDetailTableViewCell = tableView.dequeueReusableCell(withClass: EventDetailTableViewCell.self, for: indexPath)
             cell.selectionStyle = .none
             cell.event = self.event
+            cell.applyTheme()
             return cell
         }
     }

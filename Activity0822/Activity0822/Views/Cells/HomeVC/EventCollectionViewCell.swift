@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol EventCollectionViewCellDelegate: class {
-    func didClickCollectButton(_ sender: UIButton, at indexPath: IndexPath)
-}
-
 class EventCollectionViewCell: UICollectionViewCell {
 
     // MARK: IBOutlets
@@ -71,8 +67,6 @@ class EventCollectionViewCell: UICollectionViewCell {
 
     var indexPath: IndexPath!
 
-    weak var delegate: EventCollectionViewCellDelegate?
-
     var event: Event? {
         didSet {
             if let event = event {
@@ -111,9 +105,8 @@ extension EventCollectionViewCell {
         cardView.shadowOpacity = 0.5
         cardView.layer.masksToBounds = false
 
-        locationImageView.image = UIImage(named: "tabbar_icon_map_default")
+        locationImageView.image = UIImage(named: "tabbar_icon_map_default")?.withRenderingMode(.alwaysTemplate)
 
-//        collectButton.tintColor = Theme.current.tint
         collectButton.setImage(UIImage(named: "navbar_icon_pick_default")?.withRenderingMode(.alwaysTemplate), for: .normal)
         collectButton.setImage(UIImage(named: "navbar_icon_pick_pressed"), for: .selected)
     }
@@ -125,17 +118,16 @@ extension EventCollectionViewCell {
     func applyTheme() {
         contentBackgroundView.backgroundColor = Theme.current.tableViewBackground
 
-
         cardView.backgroundColor = Theme.current.tableViewCellBackgorund
         cardView.shadowColor = Theme.current.shadow
 
-        dateLabel.textColor = Theme.current.tableViewCellLightText
+        dateLabel.textColor = Theme.current.dateLabel
         nameLabel.textColor = Theme.current.tableViewCellLightText
         groupNameLabel.textColor = Theme.current.tableViewCellLightText
         venueNameLabel.textColor = Theme.current.tableViewCellLightText
         attendeesLabel.textColor = Theme.current.tableViewCellLightText
 
-        locationImageView.tintColor = Theme.current.tint
+        locationImageView.tintColor = Theme.current.tableViewCellLightText
     }
 
 }

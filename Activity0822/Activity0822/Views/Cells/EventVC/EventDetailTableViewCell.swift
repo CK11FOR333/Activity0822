@@ -29,7 +29,7 @@ class EventDetailTableViewCell: UITableViewCell {
 
                 // Apply paragraph styles to paragraph
                 attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paraStyle, range: NSRange(location: 0,length: attributedString.length))
-//                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributedString.length))
+                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: Theme.current.tableViewCellLightText, range: NSMakeRange(0, attributedString.length))
 
                 textView.attributedText = attributedString
                 textView.isEditable = false
@@ -64,6 +64,22 @@ extension EventDetailTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+}
+
+extension EventDetailTableViewCell {
+
+    func applyTheme() {
+        contentView.backgroundColor = Theme.current.tableViewBackground
+
+        attendeesLabel.textColor = Theme.current.tableViewCellLightText
+        detailsLabel.textColor = Theme.current.tableViewCellLightText
+//        let attStr = textView.attributedText
+//        let mutableAttStr = NSMutableAttributedString.init(string: attStr.)
+//        mutableAttStr.addAttribute(NSAttributedString.Key.foregroundColor, value: Theme.current.tableViewCellLightText, range: NSMakeRange(0, mutableAttStr.length))
+//        textView.attributedText = attStr
+        textView.backgroundColor = Theme.current.tableViewBackground
     }
 
 }

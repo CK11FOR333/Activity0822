@@ -12,6 +12,8 @@ import AlamofireImage
 
 class GroupCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var contentBackgroundView: UIView!
+
     @IBOutlet weak var shadowBackgroundView: UIView!
 
     @IBOutlet weak var cardView: UIView!
@@ -44,19 +46,6 @@ class GroupCollectionViewCell: UICollectionViewCell {
                 titleLabel.text = group.name
 
                 attendeesLabel.text = "\(group.attendeesCount) attendees"
-
-                //                var isCollected = false
-                //                favoriteManager.isCafeCollected(cafe) { [weak self] (collected) in
-                //                    isCollected = collected
-                //
-                //
-                //                    self?.collectButton.isSelected = isCollected ? true : false
-                //                    //                collectButton.tintColor = isCollected ? UIColor(hexString: "EB5757") : Theme.current.tint
-                //                    self?.collectButton.tintColor = Theme.current.tint
-                //                    //                if !isCollected {
-                //                    //
-                //                    //                }
-                //                }
             }
         }
     }
@@ -76,6 +65,21 @@ extension GroupCollectionViewCell {
         shadowBackgroundView.shadowRadius = 2
         shadowBackgroundView.shadowOpacity = 0.5
         shadowBackgroundView.clipsToBounds = false
+    }
+
+}
+
+extension GroupCollectionViewCell {
+
+    func applyTheme() {
+        contentBackgroundView.backgroundColor = Theme.current.tableViewBackground
+
+        cardView.backgroundColor = Theme.current.tableViewCellBackgorund
+        cardView.shadowColor = Theme.current.shadow
+
+        categoryLabel.textColor = Theme.current.tableViewCellLightText
+        titleLabel.textColor = Theme.current.tableViewCellLightText
+        attendeesLabel.textColor = Theme.current.tableViewCellLightText
     }
 
 }

@@ -51,6 +51,7 @@ extension GroupViewController {
     }
 
     func setupNavigationBar() {
+        self.navigationItem.title = "Group"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: nil)
 
         if #available(iOS 11.0, *) {

@@ -66,6 +66,8 @@
             <viewLayoutGuide key="safeArea" id="QCx-ON-Lgp"/>
             <connections>
                 <outlet property="collectionView" destination="4Tr-hp-pca" id="2f2-U1-hEu"/>
+                <outlet property="groupsDescriptionLabel" destination="46s-f0-ehi" id="Zg7-wh-aXv"/>
+                <outlet property="groupsTitleLabel" destination="NNR-mB-eCM" id="KgB-P8-7pZ"/>
             </connections>
             <point key="canvasLocation" x="136.80000000000001" y="186.94581280788179"/>
         </tableViewCell>

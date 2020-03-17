@@ -24,6 +24,10 @@ class GroupsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    @IBOutlet weak var groupsTitleLabel: UILabel!
+
+    @IBOutlet weak var groupsDescriptionLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -45,7 +49,14 @@ class GroupsTableViewCell: UITableViewCell {
 
         collectionView.register(nibWithCellClass: GroupCollectionViewCell.self)
     }
-    
+
+    func applyTheme() {
+        contentView.backgroundColor = Theme.current.tableViewBackground
+        groupsTitleLabel.textColor = Theme.current.tableViewCellLightText
+        groupsDescriptionLabel.textColor = Theme.current.tabBarUnSelected
+        collectionView.backgroundColor = Theme.current.tableViewBackground
+    }
+
 }
 
 // MARK: - UICollectionView DataSource
@@ -66,6 +77,7 @@ extension GroupsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GroupCollectionViewCell = collectionView.dequeueReusableCell(withClass: GroupCollectionViewCell.self, for: indexPath)
         cell.group = cellModels![indexPath.item]
+        cell.applyTheme()
         return cell
     }
 
